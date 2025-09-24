@@ -9,38 +9,46 @@
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
-  <nav>
-    <div class="container nav-container">
-      <h1>Claudio Aliste Requena</h1>
-      <ul>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="container">
+      <div class="logo">Claudio Aliste Requena</div>
+      <ul class="nav-links">
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#skills">Know How</a></li>
         <li><a href="#projects">Proyectos</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </div>
-  </nav>
+  </div>
 
-  <header class="hero container reveal">
-    <!-- Cambia perfil.jpg por tu imagen personalizada en la carpeta img/ -->
-    <img src="img/perfil.jpg" alt="Foto de Claudio Aliste" class="profile-pic" />
-    <div class="hero-text">
-      <h2>Ingeniero Cloud & Entusiasta Tech</h2>
-      <p>Conectando Infraestructura, Redes y Cloud como un ninja ⚙️</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Ingeniero Cloud & Entusiasta Tech</h1>
+        <p>Conectando Infraestructura, Redes y Cloud como un ninja ⚙️</p>
+        <a href="#contact" class="btn-primary">Contactarme</a>
+      </div>
+      <!-- Imagen principal: Reemplaza 'perfil.jpg' por la tuya -->
+      <img src="img/perfil.jpg" alt="Foto de Claudio Aliste" class="hero-img" />
     </div>
-  </header>
+  </section>
 
-  <section id="about" class="container reveal">
-    <h2>Hola World 👋</h2>
-    <p>
-      Soy Claudio, un profesional apasasionado de la tecnología, trabajo como Ingeniero de infraestructura TI & Cloud, redes y automatización. Me encanta convertir caos en orden usando scripts, nubes y terminales. Cuando no estoy desplegando servidores, probablemente estoy volando un dron o imprimiendo en 3D algo que aún no existe 😄.
+  <!-- SOBRE MI -->
+  <section id="about" class="section container">
+    <h2 class="section-title">Hola World 👋</h2>
+    <p class="section-description">
+      Soy Claudio, un profesional apasionado por la tecnología. Trabajo como Ingeniero de Infraestructura TI & Cloud, redes y automatización. Me encanta convertir caos en orden usando scripts, nubes y terminales. Cuando no estoy desplegando servidores, probablemente estoy volando un dron o imprimiendo en 3D algo que aún no existe 😄.
     </p>
   </section>
 
-  <section id="skills" class="container reveal">
-    <h2>Parte de mis Conocimientos🔧</h2>
-    <div class="grid-cards">
-      <div class="card">
+  <!-- HABILIDADES -->
+  <section id="skills" class="section container">
+    <h2 class="section-title">Parte de mis Conocimientos🔧</h2>
+    <div class="about-cards">
+      <div class="about-card">
         <h3>Cloud & DevOps</h3>
         <ul>
           <li>☁️ AWS, Azure, Google Cloud</li>
@@ -48,7 +56,7 @@
           <li>🔐 Vault, Terraform</li>
         </ul>
       </div>
-      <div class="card">
+      <div class="about-card">
         <h3>Infraestructura</h3>
         <ul>
           <li>🖥️ VMware, Proxmox</li>
@@ -56,7 +64,7 @@
           <li>🧠 Zabbix, CheckMK</li>
         </ul>
       </div>
-      <div class="card">
+      <div class="about-card">
         <h3>Linux & Automatización</h3>
         <ul>
           <li>🐧 Bash, Python, Ansible</li>
@@ -67,37 +75,42 @@
     </div>
   </section>
 
-  <section id="projects" class="container reveal">
-    <h2>Algunos Proyectos 💻</h2>
-    <div class="grid-cards">
-      <div class="card project-card">
-        <!-- Cambia proyecto1.jpg por la imagen de tu proyecto -->
-        <img src="img/proyecto1.jpg" alt="Proyecto 1" />
-        <h3>Monitoreo Centralizado</h3>
-        <p>Implementación de Zabbix y CheckMK para infraestructura híbrida.</p>
+  <!-- PROYECTOS -->
+  <section id="projects" class="section container">
+    <h2 class="section-title">Algunos Proyectos 💻</h2>
+    <div class="project-cards">
+      <div class="project-card">
+        <img src="img/proyecto1.jpg" alt="Proyecto 1">
+        <div class="project-info">
+          <h3>Monitoreo Centralizado</h3>
+          <p>Implementación de Zabbix y CheckMK para infraestructura híbrida.</p>
+        </div>
       </div>
-      <div class="card project-card">
-        <!-- Cambia proyecto2.jpg por la imagen de tu proyecto -->
-        <img src="img/proyecto2.jpg" alt="Proyecto 2" />
-        <h3>Infraestructura como Código</h3>
-        <p>Automatización de infraestructura con Ansible + Terraform.</p>
+      <div class="project-card">
+        <img src="img/proyecto2.jpg" alt="Proyecto 2">
+        <div class="project-info">
+          <h3>Infraestructura como Código</h3>
+          <p>Automatización con Ansible + Terraform.</p>
+        </div>
       </div>
-      <div class="card project-card">
-        <!-- Cambia proyecto3.jpg por la imagen de tu proyecto -->
-        <img src="img/proyecto3.jpg" alt="Proyecto 3" />
-        <h3>Backup Multinube</h3>
-        <p>Solución de respaldos distribuidos con Veeam + S3 + Azure Blob.</p>
+      <div class="project-card">
+        <img src="img/proyecto3.jpg" alt="Proyecto 3">
+        <div class="project-info">
+          <h3>Backup Multinube</h3>
+          <p>Respaldo distribuido con Veeam + S3 + Azure Blob.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="container reveal">
-    <h2>Conectemos 🧠</h2>
+  <!-- CONTACTO -->
+  <section id="contact" class="section container contact">
+    <h2 class="section-title">Conectemos 🧠</h2>
     <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <textarea name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-      <button type="submit"><i class="fa-solid fa-terminal"></i> Enviar</button>
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="message" rows="5" placeholder="Tu mensaje..." required></textarea>
+      <button class="btn-primary" type="submit"><i class="fa-solid fa-terminal"></i> Enviar</button>
     </form>
 
     <div class="social-icons">
@@ -109,18 +122,21 @@
     </div>
   </section>
 
-  <footer>
-    <p> Codificado por Claudio Aliste — 2025</p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Codificado por Claudio Aliste — 2025</p>
   </footer>
 
+  <!-- Animación de entrada -->
   <script>
-    ScrollReveal().reveal('.reveal', {
+    ScrollReveal().reveal('.section', {
       origin: 'bottom',
       distance: '50px',
       duration: 1000,
-      delay: 100,
+      delay: 200,
       reset: false
     });
   </script>
+
 </body>
 </html>
