@@ -1,15 +1,53 @@
+:root {
+  --main-color: #2980b9;
+  --text-color: #2c3e50;
+  --bg-color: #f4f6f9;
+  --white: #fff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  background-color: #f7f9fc;
-  color: #333;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   padding: 20px;
+}
+
+nav {
+  background: var(--white);
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
 header {
@@ -17,52 +55,66 @@ header {
   margin-bottom: 40px;
 }
 
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
 header h1 {
   font-size: 2.5em;
-  color: #2c3e50;
+  color: var(--text-color);
 }
 
 .subtitle {
+  font-size: 1.1em;
   color: #7f8c8d;
-  font-size: 1.2em;
 }
 
 section {
   max-width: 800px;
   margin: 0 auto 40px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 section h2 {
-  color: #2980b9;
-  margin-bottom: 10px;
+  color: var(--main-color);
+  margin-bottom: 15px;
 }
 
 ul {
   list-style: none;
-  padding-left: 20px;
+  padding-left: 0;
 }
 
-ul li::before {
-  content: "✔️ ";
-  color: #27ae60;
+ul li {
+  margin-bottom: 10px;
 }
 
-a {
-  color: #2980b9;
-  text-decoration: none;
+.social-icons {
+  font-size: 2em;
+  margin-top: 10px;
 }
 
-a:hover {
-  text-decoration: underline;
+.social-icons a {
+  margin: 0 10px;
+  color: var(--main-color);
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #1abc9c;
 }
 
 footer {
   text-align: center;
-  font-size: 0.9em;
   color: #aaa;
-  margin-top: 60px;
+  font-size: 0.9em;
+  margin-top: 40px;
 }
