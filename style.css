@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Mí - How Know Me</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Hola, soy [Tu Nombre]</h1>
+    <p class="subtitle">Desarrollador | Creativo | Apasionado por la tecnología</p>
+  </header>
+
+  <section class="about">
+    <h2>Sobre mí</h2>
+    <p>
+      Soy un desarrollador con experiencia en diseño web, desarrollo front-end y algo de back-end.
+      Me encanta aprender cosas nuevas y compartir lo que sé con los demás.
+    </p>
+  </section>
+
+  <section class="skills">
+    <h2>Habilidades</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Git y GitHub</li>
+      <li>React, Vue (básico)</li>
+      <li>Diseño Responsivo</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Contacto</h2>
+    <p>Puedes escribirme a: <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
+    <p>O visitar mi <a href="https://github.com/tuusuario" target="_blank">GitHub</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 [Tu Nombre]. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
