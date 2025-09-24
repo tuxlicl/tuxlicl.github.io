@@ -6,6 +6,7 @@
   <title>Claudio Aliste - Portafolio Profesional</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
   <nav>
@@ -15,12 +16,13 @@
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#skills">Habilidades</a></li>
         <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#timeline">Experiencia</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </div>
   </nav>
 
-  <header class="hero container">
+  <header class="hero container reveal">
     <img src="img/perfil.jpg" alt="Foto de Claudio Aliste" class="profile-pic" />
     <div class="hero-text">
       <h2>Hola, soy Claudio</h2>
@@ -28,14 +30,14 @@
     </div>
   </header>
 
-  <section id="about" class="container">
+  <section id="about" class="container reveal">
     <h2>Sobre mí</h2>
     <p>
       Profesional con sólida experiencia en tecnologías de la información y telecomunicaciones, especializado en Cloud Computing, virtualización, monitoreo y continuidad operacional.
     </p>
   </section>
 
-  <section id="skills" class="container">
+  <section id="skills" class="container reveal">
     <h2>Habilidades</h2>
     <div class="grid-cards">
       <div class="card">
@@ -68,7 +70,7 @@
     </div>
   </section>
 
-  <section id="projects" class="container">
+  <section id="projects" class="container reveal">
     <h2>Proyectos</h2>
     <div class="grid-cards">
       <div class="card project-card">
@@ -86,3 +88,65 @@
         <h3>Migración a la nube</h3>
         <p>Migración de infraestructura on-premise a Azure y GCP.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="timeline" class="container reveal">
+    <h2>Experiencia Profesional</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2023 - Actualidad</div>
+        <div class="timeline-content">
+          <h3>Ingeniero Cloud</h3>
+          <p>Diseño e implementación de infraestructura escalable en AWS y Azure.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2018 - 2023</div>
+        <div class="timeline-content">
+          <h3>Administrador de Infraestructura TI</h3>
+          <p>Virtualización, backups, monitoreo y administración de entornos críticos.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2015 - 2018</div>
+        <div class="timeline-content">
+          <h3>Soporte Avanzado & Redes</h3>
+          <p>Redes LAN/WAN, hardware, servidores, soluciones on-premise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container reveal">
+    <h2>Contacto</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+    </form>
+
+    <div class="social-icons">
+      <a href="https://github.com/tuxicl" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/claudioalisterequena" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.youtube.com/@ClaudioAliste" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/claudioaliste" target="_blank"><i class="fab fa-square-instagram"></i></a>
+      <a href="https://www.tiktok.com/@claudioaliste" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Claudio Aliste. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('.reveal', {
+      origin: 'bottom',
+      distance: '50px',
+      duration: 1000,
+      delay: 100,
+      reset: false
+    });
+  </script>
+</body>
+</html>
