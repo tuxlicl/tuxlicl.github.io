@@ -1,4 +1,4 @@
-/* General Reset & Fonts */
+/* --- Reset y Tipografía --- */
 * {
   margin: 0;
   padding: 0;
@@ -7,64 +7,62 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
+  background-color: #0e1014;
+  color: #d0d6e1;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- Contenedor general --- */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
 }
 
-/* Navbar */
-.navbar {
-  background-color: #161b22;
-  padding: 20px 0;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-}
-
-.navbar .logo {
-  color: #58a6ff;
+/* --- Botones --- */
+.btn-primary {
+  display: inline-block;
+  background-color: #58a6ff;
+  color: #0e1014;
+  padding: 12px 24px;
+  border-radius: 8px;
   font-weight: bold;
-  font-size: 24px;
-}
-
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links li a {
-  color: #c9d1d9;
   text-decoration: none;
-  transition: 0.3s;
+  transition: background 0.3s ease;
 }
 
-.nav-links li a:hover {
-  color: #58a6ff;
+.btn-primary:hover {
+  background-color: #79b8ff;
 }
 
-/* Hero */
+/* --- Navbar (si decides agregar uno más adelante) --- */
+nav {
+  background-color: transparent;
+  padding: 20px 0;
+}
+
+/* --- HERO / PORTADA --- */
 .hero {
+  padding: 80px 0;
+  background: radial-gradient(circle at top left, #111319, #0e1014);
   display: flex;
   align-items: center;
-  padding: 80px 0;
-  background: radial-gradient(ellipse at center, #161b22 0%, #0d1117 100%);
 }
 
 .hero-content {
@@ -74,117 +72,94 @@ img {
   flex-wrap: wrap;
 }
 
-.hero-text h1 {
+.hero-content .text {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.hero-content .text h1 {
   font-size: 48px;
-  color: #58a6ff;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
-.hero-text p {
-  font-size: 20px;
-  color: #8b949e;
+.hero-content .text p {
+  font-size: 18px;
+  color: #9ca3af;
   margin-bottom: 20px;
 }
 
-.btn-primary {
-  background-color: #238636;
-  color: #ffffff;
-  padding: 12px 24px;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #2ea043;
-}
-
-.hero-img {
+.hero-content .photo {
+  flex: 1;
   max-width: 300px;
 }
 
-/* Sections */
+/* --- Secciones generales --- */
 .section {
-  padding: 60px 0;
+  padding: 80px 0;
 }
 
-.section-title {
-  font-size: 32px;
-  margin-bottom: 20px;
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
   color: #58a6ff;
 }
 
-.section-description {
+/* --- SOBRE MÍ --- */
+.about p {
   font-size: 18px;
-  color: #8b949e;
-  margin-bottom: 40px;
+  color: #c9d1d9;
+  margin-bottom: 15px;
 }
 
-/* About */
-.about-cards {
+/* --- CARDS GENERALES --- */
+.cards {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 }
 
-.about-card {
-  background-color: #161b22;
+.card {
+  background-color: #1a1e25;
   padding: 30px;
   border-radius: 12px;
   flex: 1;
   min-width: 280px;
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.05);
-}
-
-.about-card h3 {
-  color: #f0f6fc;
-  margin-bottom: 15px;
-}
-
-.about-card ul {
-  list-style: disc inside;
-  color: #c9d1d9;
-}
-
-/* Projects */
-.project-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.project-card {
-  background-color: #161b22;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(88, 166, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-  flex: 1;
-  min-width: 300px;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+.card:hover {
+  transform: translateY(-6px);
 }
 
-.project-info {
-  padding: 20px;
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #ffffff;
 }
 
-.project-info h3 {
-  color: #58a6ff;
+.card ul {
+  padding-left: 18px;
+  color: #d0d6e1;
+}
+
+.card ul li {
   margin-bottom: 10px;
 }
 
-.btn-secondary {
-  display: inline-block;
-  margin-top: 10px;
-  color: #238636;
-  text-decoration: none;
-  font-weight: bold;
+/* --- PROYECTOS --- */
+.project img {
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
 
-/* Contact */
+.project p {
+  font-size: 16px;
+  color: #c9d1d9;
+}
+
+/* --- CONTACTO --- */
 .contact form {
   display: flex;
   flex-direction: column;
@@ -197,9 +172,9 @@ img {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background-color: #0d1117;
+  background-color: #111319;
   color: #ffffff;
-  border: 1px solid #30363d;
+  border: 1px solid #2c303a;
 }
 
 .contact input:focus,
@@ -208,31 +183,62 @@ img {
   outline: none;
 }
 
-.contact .btn-primary i {
-  margin-right: 8px;
+.contact button {
+  background-color: #58a6ff;
+  color: #0e1014;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #79b8ff;
 }
 
 .social-icons {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   gap: 20px;
 }
 
 .social-icons a {
-  color: #8b949e;
+  color: #9ca3af;
   font-size: 24px;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .social-icons a:hover {
   color: #58a6ff;
 }
 
-/* Footer */
+/* --- Footer --- */
 .footer {
-  background-color: #161b22;
-  padding: 20px 0;
+  background-color: #0e1014;
+  padding: 30px 0;
   text-align: center;
-  color: #8b949e;
+  color: #6b7280;
   font-size: 14px;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-content .text {
+    padding-right: 0;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }
