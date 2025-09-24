@@ -1,7 +1,8 @@
+
 :root {
   --bg: #0d1117;
   --fg: #c9d1d9;
-  --accent: #39c5bb;  /* color neón cian */
+  --accent: #39c5bb;
   --panel-bg: rgba(20, 25, 30, 0.85);
   --shadow: rgba(0, 0, 0, 0.7);
 }
@@ -61,7 +62,6 @@ nav ul li a:hover {
   border-bottom: 2px solid var(--accent);
 }
 
-/* header / hero */
 .hero {
   text-align: center;
   padding: 3em 1em;
@@ -87,7 +87,6 @@ nav ul li a:hover {
   color: var(--fg);
 }
 
-/* secciones */
 section {
   margin: 3em 0;
   background: var(--panel-bg);
@@ -102,7 +101,6 @@ section:hover {
   background: rgba(20, 25, 30, 0.95);
 }
 
-/* grid de cards */
 .grid-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -141,7 +139,6 @@ section:hover {
   color: var(--accent);
 }
 
-/* formulario */
 form {
   display: flex;
   flex-direction: column;
@@ -176,7 +173,6 @@ form button:hover {
   background: #79e8d0;
 }
 
-/* íconos sociales */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -194,7 +190,6 @@ form button:hover {
   transform: scale(1.2);
 }
 
-/* responsive */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
