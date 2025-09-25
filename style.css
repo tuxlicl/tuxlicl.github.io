@@ -305,3 +305,57 @@ nav {
     transform: translateY(0);
   }
 }
+/* === CERTIFICACIONES === */
+.cert-section {
+  background: linear-gradient(135deg, #0d1117, #1a1f29);
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin-top: 60px;
+  box-shadow: 0 0 25px rgba(88, 166, 255, 0.05);
+}
+
+.cert-section h2 {
+  color: #58a6ff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cert-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.cert-card {
+  background-color: #161b22;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  width: 220px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.1);
+}
+
+.cert-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.cert-card h3 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.cert-card p {
+  color: #8b949e;
+  font-size: 14px;
+}
