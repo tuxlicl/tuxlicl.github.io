@@ -101,6 +101,34 @@
   </div>
 </section>
 
+<!--
+<section id="certificaciones" class="section cert-section reveal">
+  <h2>Certificaciones ⭐</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <img src="img/aws.png" alt="AWS Certified" />
+      <h3>AWS Solutions Architect</h3>
+      <p>Amazon Web Services – 2023</p>
+    </div>
+    <div class="cert-card">
+      <img src="img/terraform.png" alt="Terraform Certification" />
+      <h3>Terraform Associate</h3>
+      <p>HashiCorp – 2024</p>
+    </div>
+    <div class="cert-card">
+      <img src="img/ckad.png" alt="CKAD" />
+      <h3>Certified Kubernetes App Dev</h3>
+      <p>Linux Foundation – 2024</p>
+    </div>
+    <div class="cert-card">
+      <img src="img/azure.png" alt="Azure" />
+      <h3>Azure Fundamentals</h3>
+      <p>Microsoft – 2022</p>
+    </div>
+  </div>
+</section>
+            -->
+
 <!-- 🔹 Proyectos -->
   <section id="projects" class="section projects">
     <div class="container">
