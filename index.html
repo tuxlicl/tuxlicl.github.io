@@ -1,155 +1,335 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claudio Aliste — Cloud Engineer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta charset="utf-8">
+  <title>Sobre nosotros - Mi Empresa Cloud</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --primary: #00BED6;
+      --dark: #0D2160;
+      --text: #333;
+      --bg-light: #f5f7fb;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 1.1rem;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--dark);
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 48px 0 24px;
+      background: var(--bg-light);
+    }
+
+    .hero-inner {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    /* VALORES */
+    .section {
+      padding: 40px 0;
+    }
+
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: var(--dark);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .value-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .value-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      flex: 1 1 160px;
+      border-radius: 8px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--dark);
+      margin-top: 4px;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 40px 0;
+      background: var(--bg-light);
+    }
+
+    .cta p {
+      margin-bottom: 16px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #e5e5e5;
+      padding: 16px 0;
+      font-size: 0.85rem;
+      background: #fff;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    footer a {
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 32px;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- 🔹 Header / Hero -->
-  <header class="hero">
-    <div class="container hero-content">
-      <div class="text">
-        <h1>Soy Claudio Aliste</h1>
-        <p>Ingeniero Infrasestructura TI & Cloud. Apasionado por las Tecnlogías y RC</p>
-        <p>Transformo infraestructura en soluciones elegantes usando código, terminales y nubes ☁️</p>
-        <a href="#contact" class="btn-primary">Conectemos</a>
-      </div>
-      <div class="photo">
-        <!-- 📷 Cambia 'perfil.jpg' por tu foto en la carpeta img/ -->
-        <img src="img/perfil.jpg" alt="Claudio Aliste" />
-      </div>
+  <header>
+    <div class="container nav">
+      <div class="logo">Mi Empresa Cloud</div>
+      <nav>
+        <ul>
+          <li><a href="#sobre">Sobre nosotros</a></li>
+          <li><a href="#valores">Valores</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- 🔹 About Me -->
-  <section id="about" class="section about">
-    <div class="container">
-      <h2>Sobre mí</h2>
-      <p>
-        Soy Claudio, un profesional apasionado por la tecnología. Trabajo como Ingeniero de Infraestructura TI & Cloud, redes y automatización. Me encanta convertir caos en orden usando scripts, nubes y terminales. Cuando no estoy desplegando servidores, probablemente estoy volando un Dron FPV o imprimiendo en 3D algo entretenido, sigo aprendiendo cada día. 🎯
-      </p>
-    </div>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="sobre">
+      <div class="container hero-inner">
+        <h1>Sobre nosotros</h1>
+        <p>
+          Desde el comienzo de nuestras operaciones hemos centrado nuestros esfuerzos en ofrecer
+          un servicio que esté siempre a la altura de las expectativas de nuestros clientes,
+          ayudándoles a sacar el máximo partido de la nube.
+        </p>
+      </div>
+    </section>
 
-  <!-- 🔹 Skills Cards -->
-  <section id="skills" class="section skills">
-    <div class="container">
-      <h2>Conocimientos</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Cloud & DevOps</h3>
-          <ul>
-            <li>☁️ AWS, Azure, Google Cloud</li>
-            <li>🚀 CI/CD, GitHub Actions</li>
-            <li>🔐 Terraform, Json</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Infraestructura</h3>
-          <ul>
-            <li>🖥️ VMware, Proxmox, Hyper-v, Linux, Window, Apple</li>
-            <li>🌐 Palot Alto, Fortinet, Cisco, Ubiquiti, HPE, Mikrotik</li>
-            <li>📊 PRTG Paessler, Pandora FMS, Zabbix, CheckMK</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Linux & Automatización</h3>
-          <ul>
-            <li>🐧 Bash, Powershell</li>
-            <li>🔁 Cron jobs, mantenimiento</li>
-            <li>📡 Monitorización personalizada</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-<section id="timeline" class="section container reveal">
-  <h2>Mi Trayectoria 🚀</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2010-2025 - Ingeniero Infraestructura Senior</h3>
-        <p>Diseño e implementación de Infraestructura On-Premise, usando diferentes soluciones para empresas FinTech.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2023-2025 - Ingeniero Cloud</h3>
-        <p>Comienzo en el mundo Cloud, extrapolando mi conocimiento de infraestructura, Curso diversos diplomados con foco en AWS & Azure.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2020 - Piloto de Drones FPV & Estabilizados</h3>
-        <p>Vuelvo al mundo de los rc de la mano de los drones FVP & Estabilizados, logrando luego de un par de años obtener Licencia de Operador y AOC emitido por la DGAC, siendo esto uno de mis grandes Hooby
-          Hoy cuento con una amplia AOC y en espera de mas noticias en el mundo de los RPAS en Chile.</p> 
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>2008 - Comienzo como Ingeniero Infraestructura TI</h3>
-        <p>Primeros pasos en virtualización, redes y seguridad con VMware, Hyper-v, Proxmox, uso de Mikrotik, Fortinet, Palo Alto, Routert & Switch</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- VALORES -->
+    <section class="section" id="valores">
+      <div class="container">
+        <h2>Nuestros pilares</h2>
 
-<!-- 🔹 Proyectos -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2>Algunos Proyectos </h2>
-      <div class="cards">
-        <!-- 📷 Reemplaza proyectoX.jpg por tus imágenes -->
-        <div class="card project">
-          <img src="img/monitoreo.jpg" alt="Monitoreo" />
-          <h3>Monitoreo Centralizado</h3>
-          <p>Implementé una plataforma de monitoreo unificada para una empresa global del sector madera y celulosa, integrando la infraestructura de todos sus países en un solo sistema. Esto permitió a los HQ supervisar en tiempo real cada operación y a los equipos locales gestionar eficientemente sus recursos TI..</p>
+        <div class="values-grid">
+          <article class="value-card">
+            <h3>Compromiso y transparencia</h3>
+            <p>
+              Relación abierta y honesta con clientes, equipo y partners, con visión de 360º.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <h3>Rapidez</h3>
+            <p>
+              Equipo senior especializado que permite respuesta ágil y decisiones eficientes.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <h3>Flexibilidad</h3>
+            <p>
+              Nos adaptamos al cambio, al ritmo de cada proyecto y de cada organización.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <h3>Formación continua</h3>
+            <p>
+              Invertimos en formación para aportar más valor hoy y en el futuro.
+            </p>
+          </article>
         </div>
-        <div class="card project">
-          <img src="img/infraestructura.jpg" alt="Infraestructura" />
-          <h3>Infraestructura como Código</h3>
-          <p>Automatización de despliegues mediante Ansible y Terraform en entornos multicloud, permitiendo crear, configurar y gestionar infraestructura de forma ágil, repetible y escalable en diferentes plataformas..</p>
-        </div>
-        <div class="card project">
-          <img src="img/backup.jpg" alt="Backup" />
-          <h3>Backup Multinube</h3>
-          <p>Diseñé soluciones de respaldo resilientes con Veeam, S3 y Azure Blob Storage, garantizando continuidad operativa y recuperación eficiente de datos en escenarios híbridos y multinube..</p>
+
+        <p style="margin-top:20px;">
+          Construimos relaciones a largo plazo con clientes, partners y proveedores,
+          buscando siempre el equilibrio entre costes y disponibilidad.
+        </p>
+
+        <!-- Stats sencillas -->
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">+40</div>
+            <div class="stat-label">Países</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">+100</div>
+            <div class="stat-label">Clientes</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">9,8/10</div>
+            <div class="stat-label">Satisfacción</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 🔹 Contacto -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Hablemos, necesitas ayuda con algo.. Escribeme</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Tu nombre" required />
-        <input type="email" name="email" placeholder="Tu correo" required />
-        <textarea name="message" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
-        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
-      </form>
+    <!-- CTA -->
+    <section class="cta" id="contacto">
+      <div class="container">
+        <p>
+          ¿Quieres iniciar una migración a la nube o mejorar tu infraestructura actual?
+          Cuéntanos tu proyecto y te ayudamos sin compromiso.
+        </p>
+        <a href="mailto:info@miempresa.com" class="btn">Contactar</a>
+      </div>
+    </section>
+  </main>
 
-      <div class="social-icons">
-        <a href="https://github.com/tuxicl" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/claudioalisterequena" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.youtube.com/@ClaudioAliste" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/claudioaliste" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@claudioaliste" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Mi Empresa Cloud</div>
+      <div>
+        <a href="#">Aviso legal</a> ·
+        <a href="#">Política de privacidad</a>
       </div>
     </div>
-  </section>
-
-  <!-- 🔹 Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Claudio Aliste. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

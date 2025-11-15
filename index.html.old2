@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claudio Aliste — Cloud Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- 🔹 Header / Hero -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="text">
+        <h1>Soy Claudio Aliste</h1>
+        <p>Ingeniero Infrasestructura TI & Cloud. Apasionado por las Tecnlogías y RC</p>
+        <p>Transformo infraestructura en soluciones elegantes usando código, terminales y nubes ☁️</p>
+        <a href="#contact" class="btn-primary">Conectemos</a>
+      </div>
+      <div class="photo">
+        <!-- 📷 Cambia 'perfil.jpg' por tu foto en la carpeta img/ -->
+        <img src="img/perfil.jpg" alt="Claudio Aliste" />
+      </div>
+    </div>
+  </header>
+
+  <!-- 🔹 About Me -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy Claudio, un profesional apasionado por la tecnología. Trabajo como Ingeniero de Infraestructura TI & Cloud, redes y automatización. Me encanta convertir caos en orden usando scripts, nubes y terminales. Cuando no estoy desplegando servidores, probablemente estoy volando un Dron FPV o imprimiendo en 3D algo entretenido, sigo aprendiendo cada día. 🎯
+      </p>
+    </div>
+  </section>
+
+  <!-- 🔹 Skills Cards -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <h2>Conocimientos</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Cloud & DevOps</h3>
+          <ul>
+            <li>☁️ AWS, Azure, Google Cloud</li>
+            <li>🚀 CI/CD, GitHub Actions</li>
+            <li>🔐 Terraform, Json</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Infraestructura</h3>
+          <ul>
+            <li>🖥️ VMware, Proxmox, Hyper-v, Linux, Window, Apple</li>
+            <li>🌐 Palot Alto, Fortinet, Cisco, Ubiquiti, HPE, Mikrotik</li>
+            <li>📊 PRTG Paessler, Pandora FMS, Zabbix, CheckMK</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Linux & Automatización</h3>
+          <ul>
+            <li>🐧 Bash, Powershell</li>
+            <li>🔁 Cron jobs, mantenimiento</li>
+            <li>📡 Monitorización personalizada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="timeline" class="section container reveal">
+  <h2>Mi Trayectoria 🚀</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2010-2025 - Ingeniero Infraestructura Senior</h3>
+        <p>Diseño e implementación de Infraestructura On-Premise, usando diferentes soluciones para empresas FinTech.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2023-2025 - Ingeniero Cloud</h3>
+        <p>Comienzo en el mundo Cloud, extrapolando mi conocimiento de infraestructura, Curso diversos diplomados con foco en AWS & Azure.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2020 - Piloto de Drones FPV & Estabilizados</h3>
+        <p>Vuelvo al mundo de los rc de la mano de los drones FVP & Estabilizados, logrando luego de un par de años obtener Licencia de Operador y AOC emitido por la DGAC, siendo esto uno de mis grandes Hooby
+          Hoy cuento con una amplia AOC y en espera de mas noticias en el mundo de los RPAS en Chile.</p> 
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>2008 - Comienzo como Ingeniero Infraestructura TI</h3>
+        <p>Primeros pasos en virtualización, redes y seguridad con VMware, Hyper-v, Proxmox, uso de Mikrotik, Fortinet, Palo Alto, Routert & Switch</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🔹 Proyectos -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h2>Algunos Proyectos </h2>
+      <div class="cards">
+        <!-- 📷 Reemplaza proyectoX.jpg por tus imágenes -->
+        <div class="card project">
+          <img src="img/monitoreo.jpg" alt="Monitoreo" />
+          <h3>Monitoreo Centralizado</h3>
+          <p>Implementé una plataforma de monitoreo unificada para una empresa global del sector madera y celulosa, integrando la infraestructura de todos sus países en un solo sistema. Esto permitió a los HQ supervisar en tiempo real cada operación y a los equipos locales gestionar eficientemente sus recursos TI..</p>
+        </div>
+        <div class="card project">
+          <img src="img/infraestructura.jpg" alt="Infraestructura" />
+          <h3>Infraestructura como Código</h3>
+          <p>Automatización de despliegues mediante Ansible y Terraform en entornos multicloud, permitiendo crear, configurar y gestionar infraestructura de forma ágil, repetible y escalable en diferentes plataformas..</p>
+        </div>
+        <div class="card project">
+          <img src="img/backup.jpg" alt="Backup" />
+          <h3>Backup Multinube</h3>
+          <p>Diseñé soluciones de respaldo resilientes con Veeam, S3 y Azure Blob Storage, garantizando continuidad operativa y recuperación eficiente de datos en escenarios híbridos y multinube..</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Contacto -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Hablemos, necesitas ayuda con algo.. Escribeme</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu correo" required />
+        <textarea name="message" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+      </form>
+
+      <div class="social-icons">
+        <a href="https://github.com/tuxicl" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/claudioalisterequena" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/@ClaudioAliste" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/claudioaliste" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@claudioaliste" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Claudio Aliste. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
