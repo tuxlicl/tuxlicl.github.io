@@ -449,3 +449,576 @@
 </body>
 </html>
 
+
+
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Tarjeta NFC - Claudio Aliste</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Iconos (Font Awesome desde CDN) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --black: #020617;
+      --card-border-1: #1d4ed8;
+      --card-border-2: #ec4899;
+      --card-border-3: #f97316;
+      --card-border-4: #22c55e;
+      --card-bg: #f9fafb;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --btn-bg: #e5e7eb;
+      --btn-bg-hover: #d1d5db;
+      --text-main: #020617;
+      --text-muted: #4b5563;
+      --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.5);
+      --radius-card: 26px;
+      --radius-btn: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      background: var(--black);
+      color: var(--text-main);
+    }
+
+    .card {
+      max-width: 420px;
+      width: 100%;
+      border-radius: var(--radius-card);
+      padding: 2px; /* borde multicolor */
+      background: linear-gradient(
+        135deg,
+        var(--card-border-1),
+        var(--card-border-2),
+        var(--card-border-3),
+        var(--card-border-4),
+        var(--card-border-1)
+      );
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-inner {
+      border-radius: var(--radius-card);
+      background: var(--card-bg);
+      padding: 24px 18px 20px;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 3px solid rgba(148, 163, 184, 0.6);
+      margin-bottom: 16px;
+      box-shadow: 0 12px 25px rgba(15, 23, 42, 0.35);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .name {
+      font-size: 1.4rem;       /* un poco más pequeño para móvil */
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .role {
+      max-width: 320px;
+      font-size: 0.82rem;
+      font-weight: 600;        /* bold más pequeño */
+      line-height: 1.4;
+      color: var(--text-muted);
+    }
+
+    .primary-button {
+      width: 100%;
+      margin: 20px 0 16px;
+    }
+
+    .primary-button button {
+      width: 100%;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 16px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.5);
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+                  background 0.12s ease;
+    }
+
+    .primary-button button:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.7);
+    }
+
+    .primary-button i {
+      font-size: 1rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .action-button {
+      width: 100%;
+      border: none;
+      border-radius: var(--radius-btn);
+      padding: 10px 12px;
+      background: var(--btn-bg);
+      color: var(--text-main);
+      font-size: 0.86rem;
+      font-weight: 700;      /* texto negro en bold */
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.1s ease, transform 0.08s ease,
+                  box-shadow 0.1s ease;
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.15);
+    }
+
+    .action-button:hover {
+      background: var(--btn-bg-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+    }
+
+    .action-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    /* Colores específicos por red */
+    .btn-whatsapp .icon-circle { color: #22c55e; }
+    .btn-instagram .icon-circle { color: #e11d48; }
+    .btn-tiktok .icon-circle { color: #020617; }
+    .btn-web .icon-circle { color: #0ea5e9; }
+    .btn-phone .icon-circle { color: #0f766e; }
+    .btn-transfer .icon-circle { color: #7c3aed; }
+
+    .action-label {
+      text-align: left;
+    }
+
+    .action-main {
+      display: block;
+    }
+
+    .action-sub {
+      display: block;
+      font-weight: 600;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .chevron {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    /* Panel de datos de transferencia */
+    .transfer-panel {
+      margin-top: 8px;
+      padding: 12px 12px 10px;
+      border-radius: 18px;
+      background: #e5e7eb;
+      border: 1px solid #d4d4d8;
+      display: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .transfer-panel.open {
+      display: block;
+    }
+
+    .transfer-list {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    .transfer-list li + li {
+      margin-top: 4px;
+    }
+
+    .transfer-list strong {
+      font-weight: 800;
+    }
+
+    .copy-button {
+      width: 100%;
+      border-radius: 999px;
+      border: none;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #22c55e;
+      color: #022c22;
+      box-shadow: 0 2px 6px rgba(22, 163, 74, 0.5);
+      transition: background 0.12s ease, transform 0.08s ease,
+                  box-shadow 0.1s ease;
+    }
+
+    .copy-button:hover {
+      background: #16a34a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(21, 128, 61, 0.6);
+    }
+
+    .copy-feedback {
+      margin-top: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #15803d;
+      min-height: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .card-inner {
+        padding: 20px 14px 16px;
+      }
+      .name {
+        font-size: 1.25rem;
+      }
+      .role {
+        font-size: 0.78rem;
+      }
+      .action-button {
+        font-size: 0.82rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-inner">
+
+      <!-- PERFIL -->
+      <section class="profile">
+        <div class="avatar">
+          <!-- Cambia la ruta por tu foto -->
+          <img src="perfil.jpg
+               alt="Foto de perfil" />
+        </div>
+
+        <h1 class="name">Claudio Aliste Requena</h1>
+        <p class="role">
+          Ingeniero infraestructura Cloud TI – Aquí podrás encontrar mis redes,
+          contacto directo y datos importantes.
+        </p>
+      </section>
+
+      <!-- GUARDAR CONTACTO -->
+      <div class="primary-button">
+        <button type="button">
+          <i class="fa-regular fa-floppy-disk"></i>
+          <span>Guardar contacto</span>
+        </button>
+      </div>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <section class="actions">
+
+        <button type="button"
+                class="action-button btn-whatsapp"
+                onclick="window.location.href='https://wa.me/56933716964'">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">Enviar WhatsApp</span>
+              <span class="action-sub">+56 9 3371 6964</span>
+            </div>
+          </div>
+          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+
+        <button type="button"
+                class="action-button btn-instagram"
+                onclick="window.location.href='https://instagram.com/aliste.claudio'">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">Instagram personal</span>
+              <span class="action-sub">@aliste.claudio</span>
+            </div>
+          </div>
+          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+
+        <button type="button"
+                class="action-button btn-tiktok"
+                onclick="window.location.href='https://www.tiktok.com/@claudio_aliste'">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-brands fa-tiktok"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">TikTok</span>
+              <span class="action-sub">@Claudio Aliste</span>
+            </div>
+          </div>
+          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+
+        <button type="button"
+                class="action-button btn-web"
+                onclick="window.location.href='https://www.chilefpv.cl'">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">Sitio Web Drones</span>
+              <span class="action-sub">www.chilefpv.cl</span>
+            </div>
+          </div>
+          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+
+        <button type="button"
+                class="action-button btn-web"
+                onclick="window.location.href='https://www.geinet.cl'">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">Sitio Web Profesional</span>
+              <span class="action-sub">www.geinet.cl</span>
+            </div>
+          </div>
+          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+
+        <button type="button"
+                class="action-button btn-instagram"
+                onclick="window.location.href='https://instagram.com/chilefpv.cl'">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">Instagram Drones</span>
+              <span class="action-sub">@chilefpv.cl</span>
+            </div>
+          </div>
+          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+
+        <button type="button"
+                class="action-button btn-phone"
+                onclick="window.location.href='tel:933716964'">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">Teléfono</span>
+              <span class="action-sub">+56 9 3371 6964</span>
+            </div>
+          </div>
+          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+
+        <!-- BOTÓN QUE DESPLIEGA DATOS DE TRANSFERENCIA -->
+        <button type="button"
+                class="action-button btn-transfer"
+                data-toggle="transfer"
+                aria-expanded="false">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-solid fa-receipt"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">Datos de transferencia</span>
+              <span class="action-sub">Ver y copiar todos los datos</span>
+            </div>
+          </div>
+          <span class="chevron">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+        </button>
+
+        <!-- PANEL CON LOS DATOS -->
+        <div class="transfer-panel" id="transferPanel">
+          <ul class="transfer-list">
+            <li><strong>Nombre completo:</strong> <span data-transfer-field="nombreCompleto"></span></li>
+            <li><strong>RUT:</strong> <span data-transfer-field="rut"></span></li>
+            <li><strong>Email:</strong> <span data-transfer-field="email"></span></li>
+            <li><strong>Banco:</strong> <span data-transfer-field="banco"></span></li>
+            <li><strong>Tipo de cuenta:</strong> <span data-transfer-field="tipoCuenta"></span></li>
+            <li><strong>Número de cuenta:</strong> <span data-transfer-field="numeroCuenta"></span></li>
+          </ul>
+
+          <button type="button" class="copy-button" id="copyTransferBtn">
+            <i class="fa-regular fa-copy"></i>
+            Copiar datos de transferencia
+          </button>
+          <div class="copy-feedback" id="copyFeedback"></div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //  PERSONALIZA AQUÍ TUS DATOS DE TRANSFERENCIA
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    const transferData = {
+      nombreCompleto: "Claudio Aliste Requena",
+      rut: "15.362.777-0",
+      email: "aliste.claudio@gmail.com",
+      banco: "Banco BCI",
+      tipoCuenta: "Cuenta Corriente",
+      numeroCuenta: "61876771"
+    };
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    // Rellenar los spans del panel
+    document.querySelectorAll("[data-transfer-field]").forEach(function (el) {
+      const key = el.getAttribute("data-transfer-field");
+      if (transferData[key]) {
+        el.textContent = transferData[key];
+      }
+    });
+
+    // Toggle del panel de transferencia
+    const transferToggle = document.querySelector("[data-toggle='transfer']");
+    const transferPanel = document.getElementById("transferPanel");
+
+    if (transferToggle && transferPanel) {
+      transferToggle.addEventListener("click", function () {
+        const isOpen = transferPanel.classList.toggle("open");
+        transferToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        const icon = transferToggle.querySelector(".chevron i");
+        if (icon) {
+          icon.classList.toggle("fa-chevron-down", !isOpen);
+          icon.classList.toggle("fa-chevron-up", isOpen);
+        }
+      });
+    }
+
+    // Copiar datos de transferencia
+    const copyBtn = document.getElementById("copyTransferBtn");
+    const feedbackEl = document.getElementById("copyFeedback");
+
+    function buildTransferText(data) {
+      return (
+        "Nombre completo: " + data.nombreCompleto + "\n" +
+        "RUT: " + data.rut + "\n" +
+        "Email: " + data.email + "\n" +
+        "Banco: " + data.banco + "\n" +
+        "Tipo de cuenta: " + data.tipoCuenta + "\n" +
+        "Número de cuenta: " + data.numeroCuenta
+      );
+    }
+
+    function showFeedback(msg, ok) {
+      if (!feedbackEl) return;
+      feedbackEl.textContent = msg;
+      feedbackEl.style.color = ok ? "#15803d" : "#b91c1c";
+      setTimeout(function () {
+        feedbackEl.textContent = "";
+      }, 2500);
+    }
+
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function () {
+        const text = buildTransferText(transferData);
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text)
+            .then(function () {
+              showFeedback("Datos copiados al portapapeles ✅", true);
+            })
+            .catch(function () {
+              showFeedback("No se pudo copiar automáticamente 😕", false);
+            });
+        } else {
+          // Fallback para navegadores antiguos
+          const area = document.createElement("textarea");
+          area.value = text;
+          document.body.appendChild(area);
+          area.select();
+          try {
+            document.execCommand("copy");
+            showFeedback("Datos copiados al portapapeles ✅", true);
+          } catch (err) {
+            showFeedback("No se pudo copiar automáticamente 😕", false);
+          }
+          document.body.removeChild(area);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
