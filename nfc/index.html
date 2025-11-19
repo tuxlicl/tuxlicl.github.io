@@ -2,30 +2,44 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Claudio Aliste Requena</title>
+  <title>Tarjeta NFC - Claudio Aliste</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Iconos (Font Awesome desde CDN) -->
+  <!-- Iconos (Font Awesome) -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         crossorigin="anonymous"
         referrerpolicy="no-referrer" />
 
   <style>
+    /* =========================================================
+       🎨 ZONA DE MARCA
+       - Cambia SOLO estos colores para adaptar todo a tu branding
+       ========================================================= */
     :root {
-      --black: #020617;
-      --card-border-1: #1d4ed8;
-      --card-border-2: #ec4899;
-      --card-border-3: #f97316;
-      --card-border-4: #22c55e;
+      /* Fondo general de la página */
+      --bg-main: #020617;      /* Negro / casi negro */
+
+      /* Colores de tu marca (pon aquí los HEX de tu logo) */
+      --brand-1: #2563eb;      /* Color principal (botones, bordes)  */
+      --brand-2: #22c55e;      /* Secundario (toques de color)       */
+      --brand-3: #f97316;      /* Acento 1 (naranjo, por ejemplo)    */
+      --brand-4: #ec4899;      /* Acento 2 (rosado, por ejemplo)     */
+
+      /* Derivados – normalmente NO necesitas tocarlos */
+      --card-border-1: var(--brand-1);
+      --card-border-2: var(--brand-4);
+      --card-border-3: var(--brand-3);
+      --card-border-4: var(--brand-2);
+
       --card-bg: #f9fafb;
-      --accent: #2563eb;
+      --accent: var(--brand-1);
       --accent-hover: #1d4ed8;
       --btn-bg: #e5e7eb;
       --btn-bg-hover: #d1d5db;
       --text-main: #020617;
       --text-muted: #4b5563;
-      --shadow-soft: 0 30px 70px rgba(0, 0, 0, 0.8);
+      --shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.65);
       --radius-card: 26px;
       --radius-btn: 16px;
     }
@@ -44,46 +58,36 @@
       padding: 16px;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 14px;
-      background:
-        radial-gradient(circle at top, #111827 0, #020617 50%, #000000 100%);
-      color: #e5e7eb;
+      background: radial-gradient(circle at top, #020617 0, #000000 55%, #020617 100%);
+      color: var(--text-main);
+      perspective: 1200px; /* para efecto 3D del card */
     }
 
     .card {
       max-width: 420px;
       width: 100%;
       border-radius: var(--radius-card);
-      padding: 2px; /* borde multicolor */
-      background: linear-gradient(
-        135deg,
-        var(--card-border-1),
-        var(--card-border-2),
-        var(--card-border-3),
-        var(--card-border-4),
-        var(--card-border-1)
-      );
+      padding: 3px; /* grosor del borde multicolor */
+      background:
+        linear-gradient(135deg,
+          var(--card-border-1),
+          var(--card-border-2),
+          var(--card-border-3),
+          var(--card-border-4),
+          var(--card-border-1)
+        );
       box-shadow: var(--shadow-soft);
-      transform: translateY(0) scale(1);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px) scale(1.01);
-      box-shadow: 0 45px 100px rgba(0, 0, 0, 0.95);
-    }
-
-    @media (hover: none) {
-      .card:hover {
-        transform: none;
-        box-shadow: var(--shadow-soft);
-      }
+      transform-style: preserve-3d;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .card-inner {
       border-radius: var(--radius-card);
-      background: var(--card-bg);
+      background:
+        radial-gradient(circle at top, #ffffff 0, #f3f4f6 55%, #e5e7eb 100%);
       padding: 24px 18px 20px;
-      color: var(--text-main);
     }
 
     .profile {
@@ -102,7 +106,7 @@
       border: 3px solid rgba(148, 163, 184, 0.6);
       margin-bottom: 16px;
       box-shadow: 0 12px 25px rgba(15, 23, 42, 0.35);
-      background: #0f172a;
+      background: #000;
     }
 
     .avatar img {
@@ -113,7 +117,7 @@
     }
 
     .name {
-      font-size: 1.4rem;       /* un poco más pequeño para móvil */
+      font-size: 1.4rem;       /* tamaño cómodo para móvil */
       font-weight: 800;
       margin-bottom: 4px;
       color: var(--text-main);
@@ -122,7 +126,7 @@
     .role {
       max-width: 320px;
       font-size: 0.82rem;
-      font-weight: 600;        /* bold más pequeño */
+      font-weight: 600;        /* bold pequeño */
       line-height: 1.4;
       color: var(--text-muted);
     }
@@ -147,8 +151,10 @@
       justify-content: center;
       gap: 8px;
       box-shadow: 0 10px 20px rgba(37, 99, 235, 0.5);
-      transition: transform 0.12s ease, box-shadow 0.12s ease,
-                  background 0.12s ease;
+      transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background 0.12s ease;
     }
 
     .primary-button button:hover {
@@ -180,8 +186,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.1s ease, transform 0.08s ease,
-                  box-shadow 0.1s ease;
+      transition:
+        background 0.1s ease,
+        transform 0.08s ease,
+        box-shadow 0.1s ease;
       box-shadow: 0 2px 5px rgba(15, 23, 42, 0.15);
     }
 
@@ -212,10 +220,10 @@
     .btn-whatsapp .icon-circle { color: #22c55e; }
     .btn-instagram .icon-circle { color: #e11d48; }
     .btn-tiktok .icon-circle { color: #020617; }
+    .btn-linkedin .icon-circle { color: #0a66c2; }
     .btn-web .icon-circle { color: #0ea5e9; }
     .btn-phone .icon-circle { color: #0f766e; }
     .btn-transfer .icon-circle { color: #7c3aed; }
-    .btn-linkedin .icon-circle { color: #0a66c2; }
 
     .action-label {
       text-align: left;
@@ -282,8 +290,10 @@
       background: #22c55e;
       color: #022c22;
       box-shadow: 0 2px 6px rgba(22, 163, 74, 0.5);
-      transition: background 0.12s ease, transform 0.08s ease,
-                  box-shadow 0.1s ease;
+      transition:
+        background 0.12s ease,
+        transform 0.08s ease,
+        box-shadow 0.1s ease;
     }
 
     .copy-button:hover {
@@ -318,7 +328,7 @@
 </head>
 <body>
 
-  <div class="card">
+  <div class="card" id="card3d">
     <div class="card-inner">
 
       <!-- PERFIL -->
@@ -361,9 +371,9 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
 
-    <button type="button"
+        <button type="button"
                 class="action-button btn-phone"
-                onclick="window.location.href='tel:+56933716964'">
+                onclick="window.location.href='tel:56933716964'">
           <div class="action-left">
             <div class="icon-circle">
               <i class="fa-solid fa-phone"></i>
@@ -376,10 +386,11 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
         
- <!-- LINKEDIN -->
+<!-- RRSS Personales-->
+                
         <button type="button"
                 class="action-button btn-linkedin"
-                onclick="window.location.href='https://www.linkedin.com/in/claudio-aliste-requena'">
+                onclick="window.location.href='https://www.linkedin.com/in/claudioalisterequena'">
           <div class="action-left">
             <div class="icon-circle">
               <i class="fa-brands fa-linkedin-in"></i>
@@ -392,8 +403,22 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
 
-        <!-- Instagram -->
-        <button type="button"
+    <button type="button"
+                class="action-button btn-web"
+                onclick="window.location.href='https://www.geinet.cl'">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">Sitio Web Profesional</span>
+              <span class="action-sub">www.geinet.cl</span>
+            </div>
+          </div>
+          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+
+<button type="button"
                 class="action-button btn-instagram"
                 onclick="window.location.href='https://instagram.com/aliste.claudio'">
           <div class="action-left">
@@ -408,7 +433,6 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
 
-        <!-- TikTok -->
         <button type="button"
                 class="action-button btn-tiktok"
                 onclick="window.location.href='https://www.tiktok.com/@claudio_aliste'">
@@ -424,22 +448,7 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
 
-        <!-- Website -->
-         <button type="button"
-                class="action-button btn-web"
-                onclick="window.location.href='https://www.geinet.cl'">
-          <div class="action-left">
-            <div class="icon-circle">
-              <i class="fa-solid fa-globe"></i>
-            </div>
-            <div class="action-label">
-              <span class="action-main">Sitio Web Profesional</span>
-              <span class="action-sub">www.geinet.cl</span>
-            </div>
-          </div>
-          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
-        </button>
-
+       
         <button type="button"
                 class="action-button btn-web"
                 onclick="window.location.href='https://www.chilefpv.cl'">
@@ -454,7 +463,9 @@
           </div>
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
-       
+
+    
+
         <button type="button"
                 class="action-button btn-instagram"
                 onclick="window.location.href='https://instagram.com/chilefpv.cl'">
@@ -469,8 +480,8 @@
           </div>
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
-       
-        
+
+
         <!-- BOTÓN QUE DESPLIEGA DATOS DE TRANSFERENCIA -->
         <button type="button"
                 class="action-button btn-transfer"
@@ -512,10 +523,43 @@
     </div>
   </div>
 
+  <!-- link oculto para la vCard -->
+  <a id="vcardLink"
+     href="#"
+     download="Claudio_Aliste.vcf"
+     style="display:none;"></a>
+
   <script>
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    //  PERSONALIZA AQUÍ TUS DATOS DE TRANSFERENCIA
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    /* ==========================
+       vCard para "Guardar contacto"
+       ========================== */
+    const vcardText = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:Aliste Requena;Claudio;;;",
+      "FN:Claudio Aliste Requena",
+      "TITLE:Ingeniero infraestructura Cloud TI",
+      "TEL;TYPE=CELL:+56933716964",
+      "EMAIL;TYPE=INTERNET:aliste.claudio@gmail.com",
+      "URL;TYPE=WORK:https://www.geinet.cl",
+      "END:VCARD"
+    ].join("\\n");
+
+    const vcardLink = document.getElementById("vcardLink");
+    if (vcardLink) {
+      vcardLink.href = "data:text/vcard;charset=utf-8," + encodeURIComponent(vcardText);
+    }
+
+    const saveBtn = document.getElementById("saveContactBtn");
+    if (saveBtn && vcardLink) {
+      saveBtn.addEventListener("click", function () {
+        vcardLink.click();
+      });
+    }
+
+    /* ==========================
+       Datos de transferencia
+       ========================== */
     const transferData = {
       nombreCompleto: "Claudio Aliste Requena",
       rut: "15.362.777-0",
@@ -524,9 +568,7 @@
       tipoCuenta: "Cuenta Corriente",
       numeroCuenta: "61876771"
     };
-    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-    // Rellenar los spans del panel
     document.querySelectorAll("[data-transfer-field]").forEach(function (el) {
       const key = el.getAttribute("data-transfer-field");
       if (transferData[key]) {
@@ -534,7 +576,7 @@
       }
     });
 
-    // Toggle del panel de transferencia
+    // Toggle panel transferencia
     const transferToggle = document.querySelector("[data-toggle='transfer']");
     const transferPanel = document.getElementById("transferPanel");
 
@@ -556,11 +598,11 @@
 
     function buildTransferText(data) {
       return (
-        "Nombre completo: " + data.nombreCompleto + "\n" +
-        "RUT: " + data.rut + "\n" +
-        "Email: " + data.email + "\n" +
-        "Banco: " + data.banco + "\n" +
-        "Tipo de cuenta: " + data.tipoCuenta + "\n" +
+        "Nombre completo: " + data.nombreCompleto + "\\n" +
+        "RUT: " + data.rut + "\\n" +
+        "Email: " + data.email + "\\n" +
+        "Banco: " + data.banco + "\\n" +
+        "Tipo de cuenta: " + data.tipoCuenta + "\\n" +
         "Número de cuenta: " + data.numeroCuenta
       );
     }
@@ -587,7 +629,6 @@
               showFeedback("No se pudo copiar automáticamente 😕", false);
             });
         } else {
-          // Fallback para navegadores antiguos
           const area = document.createElement("textarea");
           area.value = text;
           document.body.appendChild(area);
@@ -603,36 +644,25 @@
       });
     }
 
-    // ============================
-    //  GUARDAR CONTACTO (.VCF)
-    // ============================
-    const saveContactBtn = document.getElementById("saveContactBtn");
+    /* ==========================
+       Efecto 3D del card (solo en desktop)
+       ========================== */
+    const card = document.getElementById("card3d");
+    if (card && window.matchMedia("(hover: hover)").matches) {
+      card.addEventListener("mousemove", function (e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-    if (saveContactBtn) {
-      saveContactBtn.addEventListener("click", function () {
-        const vcard =
-          "BEGIN:VCARD\r\n" +
-          "VERSION:3.0\r\n" +
-          "N:Aliste Requena;Claudio;;;\r\n" +         // Apellido;Nombre
-          "FN:Claudio Aliste Requena\r\n" +
-          "ORG:Geinet\r\n" +
-          "TITLE:Ingeniero infraestructura Cloud TI\r\n" +
-          "TEL;TYPE=CELL:+56933716964\r\n" +
-          "EMAIL;TYPE=INTERNET:aliste.claudio@gmail.com\r\n" +
-          "URL:https://www.geinet.cl\r\n" +
-          "END:VCARD\r\n";
+        const rotateY = ((x - rect.width / 2) / rect.width) * 14;
+        const rotateX = -((y - rect.height / 2) / rect.height) * 14;
 
-        const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-        const url = URL.createObjectURL(blob);
+        card.style.transform =
+          "rotateX(" + rotateX.toFixed(2) + "deg) rotateY(" + rotateY.toFixed(2) + "deg)";
+      });
 
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "claudio_aliste_contacto.vcf";
-
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+      card.addEventListener("mouseleave", function () {
+        card.style.transform = "rotateX(0deg) rotateY(0deg)";
       });
     }
   </script>
