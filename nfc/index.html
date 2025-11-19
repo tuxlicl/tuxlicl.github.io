@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Felipe Rodríguez - TUK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fuente opcional (puedes quitarla si quieres aún más simple) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+
+  <style>
+    :root {
+      --bg-top: #050810;
+      --bg-bottom: #101623;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #3b82f6;   /* Azul del botón principal */
+      --accent-soft: #111827;
+      --btn-bg: #111827;
+      --btn-bg-hover: #1f2937;
+      --btn-border: #1f2937;
+      --btn-radius: 999px;
+      --max-width: 430px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, var(--bg-top), var(--bg-bottom));
+      color: var(--text-main);
+    }
+
+    .card {
+      width: 100%;
+      max-width: var(--max-width);
+      background: radial-gradient(circle at top, #111827, #020617);
+      border-radius: 24px;
+      padding: 24px 18px 22px;
+      border: 1px solid var(--card-border);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(15, 23, 42, 0.7);
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 22px;
+      border: 2px solid rgba(59, 130, 246, 0.7);
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .name {
+      text-align: center;
+      margin-bottom: 4px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+
+    .role {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* Botón principal “Guardar contacto” */
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--btn-radius);
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+      border: none;
+    }
+
+    .primary-btn span.icon {
+      font-size: 1rem;
+    }
+
+    /* Botones secundarios (WhatsApp, Instagram, etc.) */
+    .btn-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: var(--btn-bg);
+      border: 1px solid var(--btn-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover {
+      background: var(--btn-bg-hover);
+    }
+
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .btn-icon.whatsapp { color: #25d366; }
+    .btn-icon.instagram { color: #e1306c; }
+    .btn-icon.tiktok { color: #fff; }
+    .btn-icon.web { color: #3b82f6; }
+    .btn-icon.phone { color: #3b82f6; }
+    .btn-icon.bank { color: #22c55e; }
+
+    .btn-label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 260px;
+    }
+
+    .btn-arrow {
+      font-size: 1rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 20px 14px 18px;
+        border-radius: 20px;
+      }
+
+      .name {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- LOGO -->
+    <div class="logo-wrapper">
+      <!-- Cambia la ruta de la imagen por la de tu logo en el repo -->
+      <div class="logo">
+        <img src="img/logo-tuk.png" alt="Logo TUK">
+      </div>
+    </div>
+
+    <!-- NOMBRE -->
+    <h1 class="name">Felipe Rodriguez</h1>
+
+    <!-- DESCRIPCIÓN / CARGO -->
+    <p class="role">
+      Gerente General TUK – Aquí podrás encontrar mis redes, contacto directo
+      y datos importantes.
+    </p>
+
+    <!-- GUARDAR CONTACTO (.vcf) -->
+    <!-- Pon en el repo un archivo felipe-rodriguez.vcf y apunta aquí -->
+    <a class="primary-btn" href="felipe-rodriguez.vcf" download>
+      <span class="icon">💾</span>
+      <span>Guardar contacto</span>
+    </a>
+
+    <!-- LISTA DE BOTONES -->
+    <div class="btn-list">
+
+      <!-- WhatsApp -->
+      <a class="btn" href="https://wa.me/56997663131?text=Hola%20Felipe%2C%20te%20contacto%20desde%20tu%20tarjeta%20digital" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <span class="btn-icon whatsapp">🟢</span>
+          <span class="btn-label">Enviar WhatsApp 997663131</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- Instagram personal -->
+      <a class="btn" href="https://instagram.com/matirodrigo1" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <span class="btn-icon instagram">📸</span>
+          <span class="btn-label">Instagram: @matirodrigo1</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- TikTok -->
+      <a class="btn" href="https://www.tiktok.com/@tuk.cl" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <span class="btn-icon tiktok">🎵</span>
+          <span class="btn-label">TikTok: @tuk.cl</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- Sitio web -->
+      <a class="btn" href="https://www.tuk.cl/" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <span class="btn-icon web">🌐</span>
+          <span class="btn-label">Sitio Web: www.tuk.cl</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- Instagram empresa -->
+      <a class="btn" href="https://instagram.com/tuk.cl" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <span class="btn-icon instagram">📸</span>
+          <span class="btn-label">Instagram: @tuk.cl</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- Teléfono -->
+      <a class="btn" href="tel:+56997663131">
+        <div class="btn-left">
+          <span class="btn-icon phone">📞</span>
+          <span class="btn-label">Teléfono: 997663131</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+
+      <!-- Datos de transferencia (ejemplo PDF) -->
+      <a class="btn" href="docs/datos-transferencia.pdf" target="_blank" rel="noopener">
+        <div class="btn-left">
+          <span class="btn-icon bank">💳</span>
+          <span class="btn-label">Datos de transferencia</span>
+        </div>
+        <span class="btn-arrow">›</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
