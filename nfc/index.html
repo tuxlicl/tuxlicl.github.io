@@ -18,15 +18,16 @@
       --card-border-2: #ec4899;
       --card-border-3: #f97316;
       --card-border-4: #22c55e;
-      --card-bg: #f9fafb;
+      --card-bg-top: #f9fafb;
+      --card-bg-bottom: #e5e7eb;
       --accent: #2563eb;
       --accent-hover: #1d4ed8;
       --btn-bg: #e5e7eb;
       --btn-bg-hover: #d1d5db;
       --text-main: #020617;
       --text-muted: #4b5563;
-      --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.5);
-      --radius-card: 26px;
+      --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.6);
+      --radius-card: 28px;
       --radius-btn: 16px;
     }
 
@@ -44,7 +45,8 @@
       padding: 16px;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 14px;
-      background: var(--black);
+      background:
+        radial-gradient(circle at top, #111827 0, #020617 55%, #020617 100%);
       color: var(--text-main);
     }
 
@@ -52,7 +54,7 @@
       max-width: 420px;
       width: 100%;
       border-radius: var(--radius-card);
-      padding: 2px; /* borde multicolor */
+      padding: 2px;
       background: linear-gradient(
         135deg,
         var(--card-border-1),
@@ -66,7 +68,11 @@
 
     .card-inner {
       border-radius: var(--radius-card);
-      background: var(--card-bg);
+      background: linear-gradient(
+        180deg,
+        var(--card-bg-top) 0%,
+        var(--card-bg-bottom) 100%
+      );
       padding: 24px 18px 20px;
     }
 
@@ -83,7 +89,7 @@
       height: 120px;
       border-radius: 28px;
       overflow: hidden;
-      border: 3px solid rgba(148, 163, 184, 0.6);
+      border: 3px solid rgba(148, 163, 184, 0.7);
       margin-bottom: 16px;
       box-shadow: 0 12px 25px rgba(15, 23, 42, 0.35);
     }
@@ -96,16 +102,16 @@
     }
 
     .name {
-      font-size: 1.4rem;       /* un poco más pequeño para móvil */
+      font-size: 1.4rem;
       font-weight: 800;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       color: var(--text-main);
     }
 
     .role {
       max-width: 320px;
       font-size: 0.82rem;
-      font-weight: 600;        /* bold más pequeño */
+      font-weight: 600;
       line-height: 1.4;
       color: var(--text-muted);
     }
@@ -129,7 +135,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.5);
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.6);
       transition: transform 0.12s ease, box-shadow 0.12s ease,
                   background 0.12s ease;
     }
@@ -137,7 +143,7 @@
     .primary-button button:hover {
       background: var(--accent-hover);
       transform: translateY(-1px);
-      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.7);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.75);
     }
 
     .primary-button i {
@@ -158,12 +164,12 @@
       background: var(--btn-bg);
       color: var(--text-main);
       font-size: 0.86rem;
-      font-weight: 700;      /* texto negro en bold */
+      font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.1s ease, transform 0.08s ease,
+      transition: background 0.1s ease, transform 0.08s.ease,
                   box-shadow 0.1s ease;
       box-shadow: 0 2px 5px rgba(15, 23, 42, 0.15);
     }
@@ -198,6 +204,7 @@
     .btn-web .icon-circle { color: #0ea5e9; }
     .btn-phone .icon-circle { color: #0f766e; }
     .btn-transfer .icon-circle { color: #7c3aed; }
+    .btn-linkedin .icon-circle { color: #0a66c2; } /* NUEVO LINKEDIN */
 
     .action-label {
       text-align: left;
@@ -283,6 +290,9 @@
     }
 
     @media (max-width: 480px) {
+      body {
+        padding: 12px;
+      }
       .card-inner {
         padding: 20px 14px 16px;
       }
@@ -307,8 +317,7 @@
       <section class="profile">
         <div class="avatar">
           <!-- Cambia la ruta por tu foto -->
-          <img src="perfil.jpg
-               alt="Foto de perfil" />
+          <img src="perfil.jpg" alt="Foto de perfil" />
         </div>
 
         <h1 class="name">Claudio Aliste Requena</h1>
@@ -373,6 +382,23 @@
           </div>
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
+
+        <!-- NUEVO: LINKEDIN -->
+        <button type="button"
+                class="action-button btn-linkedin"
+                onclick="window.location.href='https://www.linkedin.com/in/claudio-aliste-requena/'">
+          <div class="action-left">
+            <div class="icon-circle">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div class="action-label">
+              <span class="action-main">LinkedIn</span>
+              <span class="action-sub">Perfil profesional</span>
+            </div>
+          </div>
+          <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+        <!-- FIN LINKEDIN -->
 
         <button type="button"
                 class="action-button btn-web"
@@ -476,9 +502,7 @@
   </div>
 
   <script>
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    //  PERSONALIZA AQUÍ TUS DATOS DE TRANSFERENCIA
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    // DATOS DE TRANSFERENCIA (edita aquí)
     const transferData = {
       nombreCompleto: "Claudio Aliste Requena",
       rut: "15.362.777-0",
@@ -487,7 +511,6 @@
       tipoCuenta: "Cuenta Corriente",
       numeroCuenta: "61876771"
     };
-    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     // Rellenar los spans del panel
     document.querySelectorAll("[data-transfer-field]").forEach(function (el) {
