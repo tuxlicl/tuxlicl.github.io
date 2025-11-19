@@ -245,70 +245,7 @@
       color: #9ca3af;
     }
 
-    /* Panel de datos de transferencia */
-    .transfer-panel {
-      margin-top: 8px;
-      padding: 12px 12px 10px;
-      border-radius: 18px;
-      background: #e5e7eb;
-      border: 1px solid #d4d4d8;
-      display: none;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .transfer-panel.open {
-      display: block;
-    }
-
-    .transfer-list {
-      list-style: none;
-      margin-bottom: 10px;
-    }
-
-    .transfer-list li + li {
-      margin-top: 4px;
-    }
-
-    .transfer-list strong {
-      font-weight: 800;
-    }
-
-    .copy-button {
-      width: 100%;
-      border-radius: 999px;
-      border: none;
-      padding: 8px 12px;
-      font-size: 0.8rem;
-      font-weight: 800;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      background: #22c55e;
-      color: #022c22;
-      box-shadow: 0 2px 6px rgba(22, 163, 74, 0.5);
-      transition:
-        background 0.12s ease,
-        transform 0.08s ease,
-        box-shadow 0.1s ease;
-    }
-
-    .copy-button:hover {
-      background: #16a34a;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 10px rgba(21, 128, 61, 0.6);
-    }
-
-    .copy-feedback {
-      margin-top: 4px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #15803d;
-      min-height: 14px;
-    }
+    /* (CSS del panel de transferencia se puede dejar o borrar; ya no se usa) */
 
     @media (max-width: 480px) {
       .card-inner {
@@ -386,8 +323,7 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
         
-<!-- RRSS Personales-->
-                
+        <!-- RRSS Personales-->
         <button type="button"
                 class="action-button btn-linkedin"
                 onclick="window.location.href='https://www.linkedin.com/in/claudioalisterequena'">
@@ -403,7 +339,7 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
 
-    <button type="button"
+        <button type="button"
                 class="action-button btn-web"
                 onclick="window.location.href='https://www.geinet.cl'">
           <div class="action-left">
@@ -418,7 +354,7 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
 
-<button type="button"
+        <button type="button"
                 class="action-button btn-instagram"
                 onclick="window.location.href='https://instagram.com/aliste.claudio'">
           <div class="action-left">
@@ -448,7 +384,6 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
 
-       
         <button type="button"
                 class="action-button btn-web"
                 onclick="window.location.href='https://www.chilefpv.cl'">
@@ -463,8 +398,6 @@
           </div>
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
-
-    
 
         <button type="button"
                 class="action-button btn-instagram"
@@ -481,43 +414,23 @@
           <span class="chevron"><i class="fa-solid fa-chevron-right"></i></span>
         </button>
 
-
-        <!-- BOTÓN QUE DESPLIEGA DATOS DE TRANSFERENCIA -->
+        <!-- BOTÓN PARA SOLICITAR DATOS DE TRANSFERENCIA POR WHATSAPP -->
         <button type="button"
                 class="action-button btn-transfer"
-                data-toggle="transfer"
-                aria-expanded="false">
+                onclick="window.location.href='https://wa.me/56933716964?text=Hola%20Claudio,%20%C2%BFme%20puedes%20enviar%20tus%20datos%20de%20transferencia?'">
           <div class="action-left">
             <div class="icon-circle">
               <i class="fa-solid fa-receipt"></i>
             </div>
             <div class="action-label">
-              <span class="action-main">Datos de transferencia</span>
-              <span class="action-sub">Ver y copiar todos los datos</span>
+              <span class="action-main">Solicitar datos de transferencia</span>
+              <span class="action-sub">Para Transferencias Bancarias</span>
             </div>
           </div>
           <span class="chevron">
-            <i class="fa-solid fa-chevron-down"></i>
+            <i class="fa-solid fa-chevron-right"></i>
           </span>
         </button>
-
-        <!-- PANEL CON LOS DATOS -->
-        <div class="transfer-panel" id="transferPanel">
-          <ul class="transfer-list">
-            <li><strong>Nombre completo:</strong> <span data-transfer-field="nombreCompleto"></span></li>
-            <li><strong>RUT:</strong> <span data-transfer-field="rut"></span></li>
-            <li><strong>Email:</strong> <span data-transfer-field="email"></span></li>
-            <li><strong>Banco:</strong> <span data-transfer-field="banco"></span></li>
-            <li><strong>Tipo de cuenta:</strong> <span data-transfer-field="tipoCuenta"></span></li>
-            <li><strong>Número de cuenta:</strong> <span data-transfer-field="numeroCuenta"></span></li>
-          </ul>
-
-          <button type="button" class="copy-button" id="copyTransferBtn">
-            <i class="fa-regular fa-copy"></i>
-            Copiar datos de transferencia
-          </button>
-          <div class="copy-feedback" id="copyFeedback"></div>
-        </div>
 
       </section>
     </div>
@@ -543,7 +456,7 @@
       "EMAIL;TYPE=INTERNET:aliste.claudio@gmail.com",
       "URL;TYPE=WORK:https://www.geinet.cl",
       "END:VCARD"
-    ].join("\\n");
+    ].join("\n");
 
     const vcardLink = document.getElementById("vcardLink");
     if (vcardLink) {
@@ -554,93 +467,6 @@
     if (saveBtn && vcardLink) {
       saveBtn.addEventListener("click", function () {
         vcardLink.click();
-      });
-    }
-
-    /* ==========================
-       Datos de transferencia
-       ========================== */
-    const transferData = {
-      nombreCompleto: "Claudio Aliste Requena",
-      rut: "15.362.777-0",
-      email: "aliste.claudio@gmail.com",
-      banco: "Banco BCI",
-      tipoCuenta: "Cuenta Corriente",
-      numeroCuenta: "61876771"
-    };
-
-    document.querySelectorAll("[data-transfer-field]").forEach(function (el) {
-      const key = el.getAttribute("data-transfer-field");
-      if (transferData[key]) {
-        el.textContent = transferData[key];
-      }
-    });
-
-    // Toggle panel transferencia
-    const transferToggle = document.querySelector("[data-toggle='transfer']");
-    const transferPanel = document.getElementById("transferPanel");
-
-    if (transferToggle && transferPanel) {
-      transferToggle.addEventListener("click", function () {
-        const isOpen = transferPanel.classList.toggle("open");
-        transferToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        const icon = transferToggle.querySelector(".chevron i");
-        if (icon) {
-          icon.classList.toggle("fa-chevron-down", !isOpen);
-          icon.classList.toggle("fa-chevron-up", isOpen);
-        }
-      });
-    }
-
-    // Copiar datos de transferencia
-    const copyBtn = document.getElementById("copyTransferBtn");
-    const feedbackEl = document.getElementById("copyFeedback");
-
-    function buildTransferText(data) {
-      return (
-        "Nombre completo: " + data.nombreCompleto + "\\n" +
-        "RUT: " + data.rut + "\\n" +
-        "Email: " + data.email + "\\n" +
-        "Banco: " + data.banco + "\\n" +
-        "Tipo de cuenta: " + data.tipoCuenta + "\\n" +
-        "Número de cuenta: " + data.numeroCuenta
-      );
-    }
-
-    function showFeedback(msg, ok) {
-      if (!feedbackEl) return;
-      feedbackEl.textContent = msg;
-      feedbackEl.style.color = ok ? "#15803d" : "#b91c1c";
-      setTimeout(function () {
-        feedbackEl.textContent = "";
-      }, 2500);
-    }
-
-    if (copyBtn) {
-      copyBtn.addEventListener("click", function () {
-        const text = buildTransferText(transferData);
-
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text)
-            .then(function () {
-              showFeedback("Datos copiados al portapapeles ✅", true);
-            })
-            .catch(function () {
-              showFeedback("No se pudo copiar automáticamente 😕", false);
-            });
-        } else {
-          const area = document.createElement("textarea");
-          area.value = text;
-          document.body.appendChild(area);
-          area.select();
-          try {
-            document.execCommand("copy");
-            showFeedback("Datos copiados al portapapeles ✅", true);
-          } catch (err) {
-            showFeedback("No se pudo copiar automáticamente 😕", false);
-          }
-          document.body.removeChild(area);
-        }
       });
     }
 
