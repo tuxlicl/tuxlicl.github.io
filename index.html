@@ -66,25 +66,27 @@
       </div>
 
       <!-- Nombre & Marca -->
-      <h1 class="text-lg sm:text-xl font-black text-white tracking-tight flex items-center justify-center gap-1.5">
+      <h1 class="text-xl font-black text-white tracking-tight">
         Claudio Aliste Requena
       </h1>
 
-      <!-- Micro-Bio Compacta (Acotada para calzar en 1 sola pantalla) -->
-      <div class="mt-1 text-xs text-slate-300 max-w-xs mx-auto leading-tight space-y-0.5">
-        <p class="font-medium">Ingeniero de Infraestructura TI & Cloud · 📍SCL 🇨🇱</p>
-        <p class="text-[11px] text-sky-400 font-mono">Del fierro a la nube desde 2008 · Piloto RPA-FPV 🚁</p>
-        <p class="pt-0.5 text-[11px] text-rose-400 font-semibold italic">
-          "No espero la solución para hacer lo que amo: me levanto a jugar."
+      <!-- Bio (Frases originales 100% íntegras) -->
+      <div class="mt-2 text-xs text-slate-300 max-w-xs mx-auto space-y-0.5 leading-snug">
+        <p class="font-medium text-slate-200">Ingeniero de Infraestructura Ti & Cloud</p>
+        <p class="text-slate-400">Del fierro a la nube desde 2008</p>
+        <p class="text-xs">📍 SCL 🇨🇱</p>
+        <p class="text-sky-400 font-mono text-xs font-semibold">Piloto RPA-FPV Certificado 🚁</p>
+        <p class="pt-1 text-xs text-rose-400 font-medium italic leading-normal">
+          "Estoy parapléjico por ahora, pero no tengo que esperar la solución para hacer lo que más me gusta. Trato de levantarme todos los días a jugar."
         </p>
-        <p class="text-[10px] text-slate-400 font-mono tracking-tight">&gt; No es fácil. Es posible.</p>
+        <p class="text-[11px] text-slate-400 font-mono pt-0.5">&gt; No es fácil. Es posible.</p>
       </div>
     </header>
 
-    <!-- ⚡ Contacto Directo & Charlas (Ubicado arriba con mailto directo) -->
+    <!-- ⚡ Contacto Directo & Charlas (Abre modal para evitar about:blank en navegadores) -->
     <div class="w-full mb-2.5">
-      <a href="mailto:aliste.claudio@gmail.com?subject=Contacto%20desde%20Bio"
-        class="group block p-2.5 rounded-xl bg-gradient-to-r from-rose-950/40 via-slate-900/80 to-slate-900/80 hover:from-rose-950/70 border border-rose-700/60 hover:border-rose-500 transition-all duration-200 shadow-md backdrop-blur">
+      <button type="button" onclick="openContactModal()"
+        class="w-full text-left group block p-2.5 rounded-xl bg-gradient-to-r from-rose-950/40 via-slate-900/80 to-slate-900/80 hover:from-rose-950/70 border border-rose-700/60 hover:border-rose-500 transition-all duration-200 shadow-md backdrop-blur cursor-pointer">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="text-base">⚡</span>
@@ -97,7 +99,7 @@
           <span
             class="text-[9px] font-bold uppercase bg-rose-900/70 text-rose-300 px-2 py-0.5 rounded border border-rose-700/50 group-hover:bg-rose-800 transition-colors">Contacto</span>
         </div>
-      </a>
+      </button>
     </div>
 
     <!-- 🔗 LISTA DE ENLACES AGRUPADOS -->
@@ -231,6 +233,130 @@
     </footer>
 
   </main>
+
+  <!-- 📩 MODAL DE CONTACTO INTERACTIVO (Evita que el navegador quede en about:blank) -->
+  <div id="contact-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4" onclick="handleBackdropClick(event)">
+    <div class="relative w-full max-w-sm bg-[#0c1222] border border-slate-700/80 rounded-2xl p-5 shadow-2xl text-left transform transition-all">
+      <!-- Barra superior decorativa -->
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-rose-500 via-indigo-500 to-sky-400 rounded-t-2xl"></div>
+
+      <!-- Cabecera del modal -->
+      <div class="flex items-start justify-between mb-4 mt-1">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">⚡</span>
+          <div>
+            <h3 class="text-sm font-bold text-white tracking-tight">Hablemos Directo</h3>
+            <p class="text-[11px] text-slate-400">Charlas, Infraestructura TI o Drones</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeContactModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition-colors text-lg leading-none" aria-label="Cerrar">✕</button>
+      </div>
+
+      <!-- Caja para copiar el correo en 1 clic -->
+      <div class="bg-slate-900/90 border border-slate-700/70 rounded-xl p-2.5 mb-3 flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="text-xs text-rose-400">✉</span>
+          <span id="email-address" class="text-xs font-mono text-slate-200 truncate select-all">aliste.claudio@gmail.com</span>
+        </div>
+        <button type="button" onclick="copyEmailToClipboard()" id="copy-btn" class="flex-shrink-0 flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold bg-rose-600 hover:bg-rose-500 text-white rounded-lg transition-all shadow-sm cursor-pointer">
+          <span id="copy-icon">📋</span>
+          <span id="copy-text">Copiar</span>
+        </button>
+      </div>
+
+      <!-- Opciones de Envío -->
+      <div class="space-y-2">
+        <!-- Opción 1: Gmail Web (Recomendada para navegadores de escritorio) -->
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aliste.claudio@gmail.com&su=Contacto%20desde%20Bio" target="_blank" rel="noopener noreferrer"
+          class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800 hover:border-red-500/50 transition-all text-xs group">
+          <div class="flex items-center gap-2.5">
+            <span class="text-base">🔴</span>
+            <div>
+              <div class="font-bold text-slate-200 group-hover:text-red-300 transition-colors">Redactar en Gmail Web</div>
+              <div class="text-[10px] text-slate-400">Abre directamente en el navegador (Mac/PC)</div>
+            </div>
+          </div>
+          <span class="text-slate-500 group-hover:text-red-400 text-xs">↗</span>
+        </a>
+
+        <!-- Opción 2: App de Correo Predeterminada (Mail / Outlook / Móvil) -->
+        <a href="mailto:aliste.claudio@gmail.com?subject=Contacto%20desde%20Bio"
+          class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800 hover:border-indigo-500/50 transition-all text-xs group">
+          <div class="flex items-center gap-2.5">
+            <span class="text-base">📬</span>
+            <div>
+              <div class="font-bold text-slate-200 group-hover:text-indigo-300 transition-colors">Abrir App de Correo</div>
+              <div class="text-[10px] text-slate-400">Apple Mail, Outlook o App en celular</div>
+            </div>
+          </div>
+          <span class="text-slate-500 group-hover:text-indigo-400 text-xs">↗</span>
+        </a>
+
+        <!-- Opción 3: LinkedIn -->
+        <a href="https://www.linkedin.com/in/claudioaliste" target="_blank" rel="noopener noreferrer"
+          class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800 hover:border-blue-500/50 transition-all text-xs group">
+          <div class="flex items-center gap-2.5">
+            <span class="text-base">💼</span>
+            <div>
+              <div class="font-bold text-slate-200 group-hover:text-blue-300 transition-colors">Mensaje por LinkedIn</div>
+              <div class="text-[10px] text-slate-400">Para temas profesionales o charlas</div>
+            </div>
+          </div>
+          <span class="text-slate-500 group-hover:text-blue-400 text-xs">↗</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function openContactModal() {
+      const modal = document.getElementById('contact-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeContactModal() {
+      const modal = document.getElementById('contact-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'contact-modal') {
+        closeContactModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeContactModal();
+      }
+    });
+
+    function copyEmailToClipboard() {
+      const email = 'aliste.claudio@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = document.getElementById('copy-btn');
+        const icon = document.getElementById('copy-icon');
+        const text = document.getElementById('copy-text');
+        
+        icon.textContent = '✓';
+        text.textContent = '¡Copiado!';
+        btn.classList.remove('bg-rose-600', 'hover:bg-rose-500');
+        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-500');
+
+        setTimeout(() => {
+          icon.textContent = '📋';
+          text.textContent = 'Copiar';
+          btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-500');
+          btn.classList.add('bg-rose-600', 'hover:bg-rose-500');
+        }, 2500);
+      }).catch(() => {
+        prompt('Copia el correo manualmente:', email);
+      });
+    }
+  </script>
 
 </body>
 
