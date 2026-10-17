@@ -5,31 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claudio Aliste Requena — Links & Bio</title>
-  <meta name="description" content="Ingeniero de Infraestructura Ti & Cloud  EML: Piernas en pausa. Ganas a todo dar">
+  <meta name="description" content="Ingeniero de Infraestructura TI & Cloud · EML: Piernas en pausa. Ganas a todo dar">
 
-  <!-- Open Graph / Meta de compartir en WhatsApp, LinkedIn y Redes -->
+  <!-- Open Graph / Meta para compartir en WhatsApp, LinkedIn y Redes -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://labhome.cl/links">
   <meta property="og:title" content="Claudio Aliste Requena — Hub Personal">
   <meta property="og:description"
-    content="Ingeniero de Infraestructura Ti & Cloud | Del fierro a la nube desde 2008 | Piloto RPA-FPV Certificado | EML: Piernas en pausa. Ganas a todo dar">
+    content="Ingeniero de Infraestructura TI & Cloud | Del fierro a la nube desde 2008 | Piloto RPA-FPV Certificado | EML: Piernas en pausa. Ganas a todo dar">
 
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
     @keyframes pulseGlow {
-
-      0%,
-      100% {
-        opacity: 0.4;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.8;
-        transform: scale(1.05);
-      }
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.75; transform: scale(1.05); }
     }
-
     .glow-bg {
       animation: pulseGlow 8s ease-in-out infinite;
     }
@@ -39,24 +29,31 @@
 <body
   class="bg-[#070b14] text-slate-100 min-h-screen flex flex-col justify-between selection:bg-rose-500 selection:text-white font-sans antialiased relative overflow-x-hidden">
 
-  <!-- Efectos de Fondo Luminosos (Atmósfera Azul Noche + Carmesí) -->
+  <!-- Efectos de Fondo Tech (Cyber Grid + Resplandores) -->
   <div class="fixed inset-0 pointer-events-none z-0">
-    <div
-      class="absolute -top-40 left-1/2 -translate-x-1/2 w-[550px] h-[550px] bg-indigo-900/20 rounded-full blur-[130px] glow-bg">
+    <!-- Matriz Tech / Grid Blueprint -->
+    <div class="absolute inset-0 opacity-[0.14]"
+      style="background-image: linear-gradient(to right, #38bdf8 1px, transparent 1px), linear-gradient(to bottom, #38bdf8 1px, transparent 1px); background-size: 28px 28px; mask-image: radial-gradient(ellipse at center, black 50%, transparent 90%); -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 90%);">
     </div>
-    <div class="absolute top-[35%] -left-32 w-80 h-80 bg-rose-950/20 rounded-full blur-[110px]"></div>
-    <div class="absolute bottom-10 -right-24 w-80 h-80 bg-sky-950/25 rounded-full blur-[120px]"></div>
+    <!-- Circuito sutil de micro-puntos -->
+    <div class="absolute inset-0 opacity-[0.08]"
+      style="background-image: radial-gradient(#f43f5e 1px, transparent 1px); background-size: 14px 14px;">
+    </div>
+    <!-- Resplandores atmosféricos -->
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[450px] h-[450px] bg-indigo-900/25 rounded-full blur-[100px] glow-bg"></div>
+    <div class="absolute top-[35%] -left-28 w-72 h-72 bg-rose-950/20 rounded-full blur-[90px]"></div>
+    <div class="absolute bottom-5 -right-20 w-72 h-72 bg-sky-950/25 rounded-full blur-[100px]"></div>
   </div>
 
-  <!-- Contenedor Principal (Centrado y optimizado para móviles) -->
-  <main class="relative z-10 w-full max-w-md mx-auto px-4 py-8 sm:py-12 flex flex-col items-center">
+  <!-- Contenedor Principal (Compacto para calzar en una sola vista sin scroll) -->
+  <main class="relative z-10 w-full max-w-sm mx-auto px-3.5 py-3 sm:py-4 flex flex-col justify-between min-h-screen">
 
     <!-- 👤 Avatar & Identidad -->
-    <header class="text-center w-full mb-6">
-      <div class="relative w-28 h-28 mx-auto mb-4">
+    <header class="text-center w-full mb-2">
+      <div class="relative w-20 h-20 mx-auto mb-2">
         <!-- Aro exterior con gradiente animado -->
         <div
-          class="w-28 h-28 rounded-full p-[2px] bg-gradient-to-tr from-rose-600 via-indigo-600 to-sky-400 shadow-[0_0_25px_rgba(225,29,72,0.35)]">
+          class="w-20 h-20 rounded-full p-[2px] bg-gradient-to-tr from-rose-600 via-indigo-600 to-sky-400 shadow-[0_0_20px_rgba(225,29,72,0.4)]">
           <!-- Foto de perfil redondeada con espejo limpio -->
           <div class="w-full h-full rounded-full overflow-hidden bg-[#0a0f1d]">
             <img src="avatar.jpg" alt="Claudio Aliste Requena" class="w-full h-full object-cover select-none"
@@ -64,188 +61,173 @@
           </div>
         </div>
         <!-- Indicador de estado online -->
-        <span class="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-[3px] border-[#070b14] rounded-full shadow"
+        <span class="absolute bottom-0.5 right-0.5 w-4 h-4 bg-emerald-500 border-2 border-[#070b14] rounded-full shadow"
           title="En línea"></span>
       </div>
 
       <!-- Nombre & Marca -->
-      <h1 class="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center justify-center gap-1.5">
+      <h1 class="text-lg sm:text-xl font-black text-white tracking-tight flex items-center justify-center gap-1.5">
         Claudio Aliste Requena
       </h1>
 
-      <!-- Micro-Bio & Frase Identitaria -->
-      <div class="mt-3 text-xs sm:text-[13px] text-slate-300 max-w-sm mx-auto leading-relaxed space-y-1">
-        <p>Ingeniero de Infraestructura Ti & Cloud</p>
-        <p> Del fierro a la nube desde 2008</p>
-        <p> 📍SCL 🇨🇱</p>
-        <p class="text-sky-300 font-medium">Piloto RPA-FPV Certificado 🚁</p>
-        <p class="pt-1.5 font-bold text-rose-400 italic">
-          "Estoy parapléjico por ahora, pero no tengo que esperar la solución para hacer lo que más me gusta. Trato de
-          levantarme todos los días a jugar.”
+      <!-- Micro-Bio Compacta (Acotada para calzar en 1 sola pantalla) -->
+      <div class="mt-1 text-xs text-slate-300 max-w-xs mx-auto leading-tight space-y-0.5">
+        <p class="font-medium">Ingeniero de Infraestructura TI & Cloud · 📍SCL 🇨🇱</p>
+        <p class="text-[11px] text-sky-400 font-mono">Del fierro a la nube desde 2008 · Piloto RPA-FPV 🚁</p>
+        <p class="pt-0.5 text-[11px] text-rose-400 font-semibold italic">
+          "No espero la solución para hacer lo que amo: me levanto a jugar."
         </p>
-        <p class="text-[11px] text-slate-400 font-mono">
-          &gt; No es fácil. Es posible.
-        </p>
+        <p class="text-[10px] text-slate-400 font-mono tracking-tight">&gt; No es fácil. Es posible.</p>
       </div>
     </header>
 
-    <!-- ⚡ Contacto Directo & Charlas (Ubicado arriba) -->
-    <div class="w-full mb-5">
-      <a href="aliste.claudio@gmail.com"
-        class="group block p-3.5 rounded-2xl bg-gradient-to-r from-rose-950/40 via-slate-900/80 to-slate-900/80 hover:from-rose-950/70 border border-rose-700/60 hover:border-rose-500 transition-all duration-200 shadow-lg backdrop-blur">
+    <!-- ⚡ Contacto Directo & Charlas (Ubicado arriba con mailto directo) -->
+    <div class="w-full mb-2.5">
+      <a href="mailto:aliste.claudio@gmail.com?subject=Contacto%20desde%20Bio"
+        class="group block p-2.5 rounded-xl bg-gradient-to-r from-rose-950/40 via-slate-900/80 to-slate-900/80 hover:from-rose-950/70 border border-rose-700/60 hover:border-rose-500 transition-all duration-200 shadow-md backdrop-blur">
         <div class="flex items-center justify-between">
-          <div class="flex items-center gap-2.5">
-            <span class="text-lg">⚡</span>
-            <div>
-              <div class="font-bold text-sm text-rose-200 group-hover:text-white transition-colors">Conversemos de
-                Todo..Escribeme</div>
-              <div class="text-[11px] text-rose-300/80">¿Tienes algo en mente, Charla, Temas de TI, algo en mente?
-                Escríbeme a <span class="underline decoration-rose-400 font-semibold">aliste.claudio@gmail.com</span>
+          <div class="flex items-center gap-2">
+            <span class="text-base">⚡</span>
+            <div class="text-left">
+              <div class="font-bold text-xs sm:text-sm text-rose-200 group-hover:text-white transition-colors">Conversemos de Todo · Escríbeme</div>
+              <div class="text-[10px] text-rose-300/80">¿Tienes algo en mente, Charla o TI? <span class="underline decoration-rose-400 font-semibold">aliste.claudio@gmail.com</span>
               </div>
             </div>
           </div>
           <span
-            class="text-[10px] font-bold uppercase bg-rose-900/70 text-rose-300 px-2.5 py-1 rounded-lg border border-rose-700/50 group-hover:bg-rose-800 transition-colors">Contacto</span>
+            class="text-[9px] font-bold uppercase bg-rose-900/70 text-rose-300 px-2 py-0.5 rounded border border-rose-700/50 group-hover:bg-rose-800 transition-colors">Contacto</span>
         </div>
       </a>
     </div>
 
     <!-- 🔗 LISTA DE ENLACES AGRUPADOS -->
-    <section class="w-full space-y-5">
+    <section class="w-full space-y-1.5 flex-1 flex flex-col justify-center">
 
-      <!-- ========================================== -->
-      <!-- GRUPO 1: CLOUD & INFRAESTRUCTURA -->
-      <!-- ========================================== -->
-      <div class="space-y-2">
-        <div class="flex items-center gap-2 px-1 text-[11px] font-bold text-indigo-400 uppercase tracking-wider">
-          <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-          <span>Cloud & Infraestructura</span>
-        </div>
-
-        <!-- 🌐 LabHome.cl -->
-        <a href="https://labhome.cl" target="_blank" rel="noopener noreferrer"
-          class="group block p-3.5 rounded-2xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-indigo-500/80 transition-all duration-200 shadow-sm backdrop-blur">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <span class="text-lg">🌐</span>
-              <div>
-                <div class="font-bold text-sm text-white group-hover:text-indigo-300 transition-colors">LabHome.cl</div>
-                <div class="text-[11px] text-slate-400">Blog técnico, Linux, redes y homelab</div>
-              </div>
-            </div>
-            <span
-              class="text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
-          </div>
-        </a>
-
-        <!-- 💼 LinkedIn -->
-        <a href="https://www.linkedin.com/in/claudioaliste" target="_blank" rel="noopener noreferrer"
-          class="group block p-3.5 rounded-2xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-blue-500/80 transition-all duration-200 shadow-sm backdrop-blur">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <span class="text-lg">💼</span>
-              <div>
-                <div class="font-bold text-sm text-white group-hover:text-blue-300 transition-colors">LinkedIn
-                  Profesional</div>
-                <div class="text-[11px] text-slate-400">Trayectoria multi-cloud (AWS/GCP) y entornos regulados</div>
-              </div>
-            </div>
-            <span
-              class="text-slate-500 group-hover:text-blue-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
-          </div>
-        </a>
-
-        <!-- 💻 GitHub -->
-        <a href="https://github.com/tuxli" target="_blank" rel="noopener noreferrer"
-          class="group block p-3.5 rounded-2xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-slate-500 transition-all duration-200 shadow-sm backdrop-blur">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <span class="text-lg">💻</span>
-              <div>
-                <div class="font-bold text-sm text-white group-hover:text-slate-200 transition-colors">GitHub</div>
-                <div class="text-[11px] text-slate-400">IaC, automatizaciones, scripts y proyectos</div>
-              </div>
-            </div>
-            <span
-              class="text-slate-500 group-hover:text-slate-300 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
-          </div>
-        </a>
-        <!-- 📸 Instagram -->
-        <a href="https://instagram.com/aliste.claudio" target="_blank" rel="noopener noreferrer"
-          class="group block p-3.5 rounded-2xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-pink-500/80 transition-all duration-200 shadow-sm backdrop-blur">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div
-                class="w-6 h-6 rounded-md bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-sm">
-                <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </div>
-              <div>
-                <div class="font-bold text-sm text-white group-hover:text-pink-300 transition-colors">Instagram</div>
-                <div class="text-[11px] text-slate-400">@aliste.claudio · Maker & Vida</div>
-              </div>
-            </div>
-            <span
-              class="text-slate-500 group-hover:text-pink-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
-          </div>
-        </a>
-
-        <!-- 📸 Instagram Maker -->
-        <a href="https://instagram.com/kreafab3d" target="_blank" rel="noopener noreferrer"
-          class="group block p-3.5 rounded-2xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-pink-500/80 transition-all duration-200 shadow-sm backdrop-blur">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div
-                class="w-6 h-6 rounded-md bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-sm">
-                <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </div>
-              <div>
-                <div class="font-bold text-sm text-white group-hover:text-pink-300 transition-colors">Instagram Maker
-                </div>
-                <div class="text-[11px] text-slate-400">@kreafab3d</div>
-              </div>
-            </div>
-            <span
-              class="text-slate-500 group-hover:text-pink-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
-          </div>
-        </a>
-
-        <!-- 📸 ChileFPV Drones -->
-        <a href="https://instagram.com/chilefpv.cl" target="_blank" rel="noopener noreferrer"
-          class="group block p-3.5 rounded-2xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-pink-500/80 transition-all duration-200 shadow-sm backdrop-blur">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div
-                class="w-6 h-6 rounded-md bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-sm">
-                <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </div>
-              <div>
-                <div class="font-bold text-sm text-white group-hover:text-pink-300 transition-colors">ChileFPV Drones
-                </div>
-                <div class="text-[11px] text-slate-400">@chilefpv.cl</div>
-              </div>
-            </div>
-            <span
-              class="text-slate-500 group-hover:text-pink-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
-          </div>
-        </a>
+      <div class="flex items-center gap-1.5 px-1 text-[10px] font-bold text-indigo-400 uppercase tracking-wider">
+        <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+        <span>Cloud & Infraestructura</span>
       </div>
+
+      <!-- 🌐 LabHome.cl -->
+      <a href="https://labhome.cl" target="_blank" rel="noopener noreferrer"
+        class="group block py-2 px-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-indigo-500/80 transition-all duration-200 shadow-sm backdrop-blur">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="text-base">🌐</span>
+            <div>
+              <div class="font-bold text-xs text-white group-hover:text-indigo-300 transition-colors">LabHome.cl</div>
+              <div class="text-[10px] text-slate-400">Blog técnico, Linux, redes y homelab</div>
+            </div>
+          </div>
+          <span
+            class="text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
+        </div>
+      </a>
+
+      <!-- 💼 LinkedIn -->
+      <a href="https://www.linkedin.com/in/claudioaliste" target="_blank" rel="noopener noreferrer"
+        class="group block py-2 px-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-blue-500/80 transition-all duration-200 shadow-sm backdrop-blur">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="text-base">💼</span>
+            <div>
+              <div class="font-bold text-xs text-white group-hover:text-blue-300 transition-colors">LinkedIn Profesional</div>
+              <div class="text-[10px] text-slate-400">Trayectoria multi-cloud (AWS/GCP) y entornos regulados</div>
+            </div>
+          </div>
+          <span
+            class="text-slate-500 group-hover:text-blue-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
+        </div>
+      </a>
+
+      <!-- 💻 GitHub -->
+      <a href="https://github.com/tuxli" target="_blank" rel="noopener noreferrer"
+        class="group block py-2 px-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-slate-500 transition-all duration-200 shadow-sm backdrop-blur">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <span class="text-base">💻</span>
+            <div>
+              <div class="font-bold text-xs text-white group-hover:text-slate-200 transition-colors">GitHub</div>
+              <div class="text-[10px] text-slate-400">IaC, automatizaciones, scripts y proyectos</div>
+            </div>
+          </div>
+          <span
+            class="text-slate-500 group-hover:text-slate-300 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
+        </div>
+      </a>
+
+      <!-- 📸 Instagram -->
+      <a href="https://instagram.com/aliste.claudio" target="_blank" rel="noopener noreferrer"
+        class="group block py-2 px-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-pink-500/80 transition-all duration-200 shadow-sm backdrop-blur">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-5 h-5 rounded-md bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-xs text-white group-hover:text-pink-300 transition-colors">Instagram</div>
+              <div class="text-[10px] text-slate-400">@aliste.claudio · Maker & Vida</div>
+            </div>
+          </div>
+          <span
+            class="text-slate-500 group-hover:text-pink-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
+        </div>
+      </a>
+
+      <!-- 📸 Instagram Maker -->
+      <a href="https://instagram.com/kreafab3d" target="_blank" rel="noopener noreferrer"
+        class="group block py-2 px-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-pink-500/80 transition-all duration-200 shadow-sm backdrop-blur">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-5 h-5 rounded-md bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-xs text-white group-hover:text-pink-300 transition-colors">Instagram Maker</div>
+              <div class="text-[10px] text-slate-400">@kreafab3d</div>
+            </div>
+          </div>
+          <span
+            class="text-slate-500 group-hover:text-pink-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
+        </div>
+      </a>
+
+      <!-- 📸 ChileFPV Drones -->
+      <a href="https://instagram.com/chilefpv.cl" target="_blank" rel="noopener noreferrer"
+        class="group block py-2 px-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-700/60 hover:border-pink-500/80 transition-all duration-200 shadow-sm backdrop-blur">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-5 h-5 rounded-md bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg class="w-3 h-3 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-xs text-white group-hover:text-pink-300 transition-colors">ChileFPV Drones</div>
+              <div class="text-[10px] text-slate-400">@chilefpv.cl</div>
+            </div>
+          </div>
+          <span
+            class="text-slate-500 group-hover:text-pink-400 group-hover:translate-x-0.5 transition-transform text-xs">↗</span>
+        </div>
+      </a>
 
     </section>
 
     <!-- 📍 Footer -->
-    <footer class="mt-8 text-center text-[11px] text-slate-500 space-y-1">
-      <p class="font-mono">Todos los derechos Reservados</p>
+    <footer class="mt-2 text-center text-[10px] text-slate-500 space-y-0.5">
       <p>© 2026 Claudio Aliste Requena · <a href="https://labhome.cl"
-          class="text-slate-400 hover:text-white underline">labhome.cl</a></p>
+          class="text-slate-400 hover:text-white underline">labhome.cl</a> · Todos los derechos Reservados</p>
     </footer>
 
   </main>
